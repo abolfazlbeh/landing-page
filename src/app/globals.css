@@ -2,26 +2,161 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Satoshi font via CDN */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap');
+/* JetBrains Mono via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #080B10;
+    --foreground: #F0F2F5;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080B10;
+    color: #F0F2F5;
+    font-family: "Satoshi", "General Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Skip to content link for accessibility */
+  .skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.5rem 1rem;
+    background: #14B8A6;
+    color: #080B10;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    transition: top 0.2s;
+  }
+  .skip-to-content:focus {
+    top: 0;
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0D1117;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #14B8A620;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #14B8A640;
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(20, 184, 166, 0.3);
+    color: #F0F2F5;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Container utility */
+  .container-narrow {
+    @apply max-w-[1200px] mx-auto px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-[120px];
+  }
+
+  /* Section label */
+  .section-label {
+    @apply text-sm font-medium tracking-widest uppercase text-teal-bright mb-4;
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-[#161B22] border border-white/[0.04] rounded-lg p-8 transition-all duration-400;
+  }
+  .card:hover {
+    @apply border-teal-bright/20 shadow-card-hover;
+  }
+
+  /* Button primary */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-medium text-snow 
+           bg-gradient-to-r from-teal-deep to-cyan-electric 
+           transition-all duration-400 ease-expo-out
+           hover:brightness-110 hover:scale-[1.02] hover:shadow-glow-teal
+           active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-bright focus-visible:ring-offset-2 focus-visible:ring-offset-abyss;
+  }
+
+  /* Button secondary */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-medium text-snow
+           bg-transparent border border-white/[0.08]
+           transition-all duration-400 ease-expo-out
+           hover:bg-white/[0.04] hover:border-teal-bright/40
+           active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-bright focus-visible:ring-offset-2 focus-visible:ring-offset-abyss;
+  }
+
+  /* Button ghost */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-md font-medium text-teal-bright
+           transition-all duration-400
+           hover:bg-teal-bright/[0.06]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-bright focus-visible:ring-offset-2 focus-visible:ring-offset-abyss;
+  }
+
+  /* Button premium (gold) */
+  .btn-premium {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-semibold text-abyss
+           bg-gradient-to-r from-amber to-honey
+           transition-all duration-400 ease-expo-out
+           hover:brightness-110 hover:scale-[1.02] hover:shadow-glow-gold
+           active:scale-[0.98]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-warm focus-visible:ring-offset-2 focus-visible:ring-offset-abyss;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* Gradient text */
+  .text-gradient-teal {
+    background: linear-gradient(90deg, #14B8A6, #06B6D4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(90deg, #D4A853, #F59E0B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    @apply backdrop-blur-xl bg-white/[0.03] border border-white/[0.06];
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
