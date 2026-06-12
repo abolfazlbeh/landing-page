@@ -1,5 +1,6 @@
 import { Fuel, Key, Globe, QrCode, Coins, Unlock } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 
 const walletFeatures = [
   {
@@ -111,55 +112,40 @@ export default function WalletSection() {
             </AnimateOnScroll>
           </div>
 
-          {/* Right: phone mockup placeholder */}
+          {/* ── RIGHT: phone photo + UI overlays ── */}
           <AnimateOnScroll delay={0.3} className="flex justify-center lg:justify-end">
-            <div
-              className="relative w-72 h-[560px] rounded-[40px] border-2 border-gold-warm/20 bg-gradient-to-b from-slate-deep to-abyss flex flex-col overflow-hidden shadow-glow-gold"
-              aria-label="DeMere Wallet app mockup"
-              role="img"
-            >
-              {/* Phone notch */}
-              <div className="h-8 flex items-center justify-center flex-shrink-0">
-                <div className="w-20 h-4 rounded-full bg-abyss border border-white/[0.06]" aria-hidden="true" />
+            <div className="relative w-full max-w-sm">
+
+              {/* Main phone photo */}
+              <PhotoPlaceholder
+                hint="A hand holding a smartphone showing a clean mobile wallet / payment confirmation screen. Dark phone, glowing UI on screen. Portrait orientation, natural hold. Aspect 3:4. ~420×560px."
+                className="w-full shadow-[0_32px_80px_rgba(212,168,83,0.15)]"
+                aspectRatio="aspect-[3/4]"
+              />
+
+              {/* Balance chip */}
+              <div className="absolute top-6 -left-4 chip-overlay rounded-xl px-4 py-3 shadow-xl">
+                <p className="text-xs mb-0.5" style={{ color: "var(--text-muted)" }}>Balance</p>
+                <p className="text-xl font-black font-mono" style={{ color: "var(--text-primary)" }}>$1,247<span className="text-sm font-normal" style={{ color: "var(--text-muted)" }}>.50</span></p>
+                <p className="text-xs text-mint mt-0.5">↑ USDC · USDT</p>
               </div>
-              {/* Screen content */}
-              <div className="flex-1 px-6 py-4 flex flex-col gap-4">
-                {/* Balance */}
-                <div className="text-center py-4">
-                  <p className="text-xs text-pewter mb-1">Total Balance</p>
-                  <p className="text-4xl font-black text-snow">$1,247.50</p>
-                  <p className="text-xs text-mint mt-1">↑ USDC · USDT</p>
+
+              {/* "Gasless" chip */}
+              <div className="absolute top-10 -right-4 bg-teal-bright text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-glow-teal whitespace-nowrap">
+                ⚡ Zero gas fees
+              </div>
+
+              {/* Token reward chip */}
+              <div className="absolute bottom-8 -left-4 chip-overlay rounded-xl px-4 py-3 shadow-xl flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-gold-warm/20 border border-gold-warm/40 flex items-center justify-center flex-shrink-0">
+                  <Coins size={14} className="text-gold-warm" aria-hidden="true" />
                 </div>
-                {/* Payment card */}
-                <div className="bg-gold-warm/10 border border-gold-warm/30 rounded-2xl p-4">
-                  <p className="text-xs text-pewter mb-2">Pay to</p>
-                  <p className="text-sm font-semibold text-snow mb-1">
-                    Coffee & Co.
-                  </p>
-                  <p className="text-xs font-mono text-gold-warm mb-3">
-                    0xA1b2...C3d4
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-black text-snow">$4.50</span>
-                    <span className="text-xs text-mint bg-mint/10 px-3 py-1 rounded-full">
-                      Gasless
-                    </span>
-                  </div>
-                </div>
-                {/* Confirm button */}
-                <div className="btn-premium text-sm text-center rounded-xl cursor-default select-none">
-                  Confirm Payment
-                </div>
-                {/* Token reward */}
-                <div className="flex items-center gap-2 text-xs text-gold-warm bg-gold-warm/5 border border-gold-warm/20 rounded-lg px-3 py-2">
-                  <Coins size={12} aria-hidden="true" />
-                  +2.5 WPGP tokens earned
+                <div>
+                  <p className="text-xs" style={{ color: "var(--text-muted)" }}>Tokens earned</p>
+                  <p className="text-sm font-black text-gold-warm font-mono">+2.5 WPGP</p>
                 </div>
               </div>
-              {/* Bottom bar */}
-              <div className="h-8 flex items-center justify-center">
-                <div className="w-28 h-1 rounded-full bg-white/10" aria-hidden="true" />
-              </div>
+
             </div>
           </AnimateOnScroll>
         </div>

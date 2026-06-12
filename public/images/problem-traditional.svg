@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 360" fill="none">
+  <defs>
+    <linearGradient id="redFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F87171" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#F87171" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="greenFlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="360" rx="16" fill="#0D1117"/>
+  <rect width="860" height="360" rx="16" fill="none" stroke="rgba(240,242,245,0.04)" stroke-width="1"/>
+
+  <!-- Section labels -->
+  <text x="24" y="36" fill="#F87171" font-size="10" font-family="sans-serif" font-weight="600" letter-spacing="2">TRADITIONAL — 5 INTERMEDIARIES</text>
+  <text x="24" y="226" fill="#14B8A6" font-size="10" font-family="sans-serif" font-weight="600" letter-spacing="2">DEMERE / WPGP — DIRECT</text>
+
+  <!-- ── ROW 1: Traditional ── -->
+  <!-- Customer -->
+  <rect x="24" y="55" width="80" height="70" rx="8" fill="rgba(248,113,113,0.06)" stroke="#F87171" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="64" y="85" fill="#94A3B8" font-size="10" font-family="sans-serif" text-anchor="middle">👤</text>
+  <text x="64" y="100" fill="#94A3B8" font-size="10" font-family="sans-serif" text-anchor="middle">Customer</text>
+  <text x="64" y="113" fill="#F87171" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">$100</text>
+
+  <!-- Arrow with cut -->
+  <line x1="108" y1="90" x2="138" y2="90" stroke="#F87171" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4 2"/>
+  <polygon points="138,86 148,90 138,94" fill="#F87171" opacity="0.5"/>
+
+  <!-- Issuing Bank -->
+  <rect x="152" y="55" width="80" height="70" rx="8" fill="rgba(15,32,39,0.8)" stroke="#F87171" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="192" y="82" fill="#64748B" font-size="9" font-family="sans-serif" text-anchor="middle">🏦</text>
+  <text x="192" y="96" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Issuing</text>
+  <text x="192" y="108" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Bank</text>
+  <!-- fee chip -->
+  <rect x="173" y="118" width="38" height="14" rx="3" fill="#F87171" opacity="0.15"/>
+  <text x="192" y="128" fill="#F87171" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">-$0.30</text>
+
+  <line x1="236" y1="90" x2="266" y2="90" stroke="#F87171" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4 2"/>
+  <polygon points="266,86 276,90 266,94" fill="#F87171" opacity="0.5"/>
+
+  <!-- Card Network -->
+  <rect x="280" y="55" width="80" height="70" rx="8" fill="rgba(15,32,39,0.8)" stroke="#F87171" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="320" y="82" fill="#64748B" font-size="9" font-family="sans-serif" text-anchor="middle">💳</text>
+  <text x="320" y="96" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Card</text>
+  <text x="320" y="108" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Network</text>
+  <rect x="301" y="118" width="38" height="14" rx="3" fill="#F87171" opacity="0.15"/>
+  <text x="320" y="128" fill="#F87171" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">-0.15%</text>
+
+  <line x1="364" y1="90" x2="394" y2="90" stroke="#F87171" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4 2"/>
+  <polygon points="394,86 404,90 394,94" fill="#F87171" opacity="0.5"/>
+
+  <!-- Processor -->
+  <rect x="408" y="55" width="80" height="70" rx="8" fill="rgba(15,32,39,0.8)" stroke="#F87171" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="448" y="82" fill="#64748B" font-size="9" font-family="sans-serif" text-anchor="middle">⚙️</text>
+  <text x="448" y="96" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Payment</text>
+  <text x="448" y="108" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Processor</text>
+  <rect x="429" y="118" width="38" height="14" rx="3" fill="#F87171" opacity="0.15"/>
+  <text x="448" y="128" fill="#F87171" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">-0.5%</text>
+
+  <line x1="492" y1="90" x2="522" y2="90" stroke="#F87171" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4 2"/>
+  <polygon points="522,86 532,90 522,94" fill="#F87171" opacity="0.5"/>
+
+  <!-- Gateway -->
+  <rect x="536" y="55" width="80" height="70" rx="8" fill="rgba(15,32,39,0.8)" stroke="#F87171" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="576" y="82" fill="#64748B" font-size="9" font-family="sans-serif" text-anchor="middle">🔒</text>
+  <text x="576" y="96" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Payment</text>
+  <text x="576" y="108" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Gateway</text>
+  <rect x="557" y="118" width="38" height="14" rx="3" fill="#F87171" opacity="0.15"/>
+  <text x="576" y="128" fill="#F87171" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">-1.5%</text>
+
+  <line x1="620" y1="90" x2="650" y2="90" stroke="#F87171" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4 2"/>
+  <polygon points="650,86 660,90 650,94" fill="#F87171" opacity="0.5"/>
+
+  <!-- Acquiring Bank -->
+  <rect x="664" y="55" width="80" height="70" rx="8" fill="rgba(15,32,39,0.8)" stroke="#F87171" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="704" y="82" fill="#64748B" font-size="9" font-family="sans-serif" text-anchor="middle">🏦</text>
+  <text x="704" y="96" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Acquiring</text>
+  <text x="704" y="108" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Bank</text>
+  <rect x="685" y="118" width="38" height="14" rx="3" fill="#F87171" opacity="0.15"/>
+  <text x="704" y="128" fill="#F87171" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">-0.5%</text>
+
+  <line x1="748" y1="90" x2="778" y2="90" stroke="#F87171" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="4 2"/>
+  <polygon points="778,86 788,90 778,94" fill="#F87171" opacity="0.5"/>
+
+  <!-- Merchant (less money) -->
+  <rect x="792" y="55" width="52" height="70" rx="8" fill="rgba(248,113,113,0.06)" stroke="#F87171" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="818" y="85" fill="#94A3B8" font-size="10" font-family="sans-serif" text-anchor="middle">🏪</text>
+  <text x="818" y="99" fill="#94A3B8" font-size="9" font-family="sans-serif" text-anchor="middle">Merchant</text>
+  <text x="818" y="113" fill="#F87171" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">~$97</text>
+
+  <!-- "2-7 days" label -->
+  <rect x="280" y="142" width="300" height="20" rx="4" fill="rgba(248,113,113,0.06)"/>
+  <text x="430" y="155" fill="#F87171" font-size="10" font-family="JetBrains Mono,monospace" text-anchor="middle">2–7 business days  ·  2.9%+ fee  ·  account freeze risk</text>
+
+  <!-- Divider -->
+  <line x1="24" y1="200" x2="836" y2="200" stroke="rgba(240,242,245,0.05)" stroke-width="1"/>
+
+  <!-- ── ROW 2: WPGP ── -->
+  <!-- Customer -->
+  <rect x="24" y="245" width="90" height="70" rx="8" fill="rgba(20,184,166,0.08)" stroke="#14B8A6" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="69" y="274" fill="#94A3B8" font-size="10" font-family="sans-serif" text-anchor="middle">👤</text>
+  <text x="69" y="289" fill="#94A3B8" font-size="10" font-family="sans-serif" text-anchor="middle">Customer</text>
+  <text x="69" y="303" fill="#14B8A6" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">$100 USDC</text>
+
+  <!-- Single clean arrow -->
+  <line x1="118" y1="280" x2="410" y2="280" stroke="url(#greenFlow)" stroke-width="2.5"/>
+  <polygon points="410,275 424,280 410,285" fill="#06B6D4"/>
+
+  <!-- Smart Contract -->
+  <rect x="340" y="248" width="160" height="64" rx="10" fill="rgba(13,148,136,0.1)" stroke="#14B8A6" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="420" y="272" fill="#F0F2F5" font-size="11" font-family="JetBrains Mono,monospace" text-anchor="middle" font-weight="600">WPGP Contract</text>
+  <text x="420" y="289" fill="#14B8A6" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">verify · atomic settle</text>
+  <text x="420" y="304" fill="#64748B" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">open source · auditable</text>
+
+  <line x1="504" y1="280" x2="690" y2="280" stroke="url(#greenFlow)" stroke-width="2.5"/>
+  <polygon points="690,275 704,280 690,285" fill="#06B6D4"/>
+
+  <!-- Merchant -->
+  <rect x="708" y="245" width="90" height="70" rx="8" fill="rgba(20,184,166,0.08)" stroke="#14B8A6" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="753" y="274" fill="#94A3B8" font-size="10" font-family="sans-serif" text-anchor="middle">🏪</text>
+  <text x="753" y="289" fill="#94A3B8" font-size="10" font-family="sans-serif" text-anchor="middle">Merchant</text>
+  <text x="753" y="303" fill="#14B8A6" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">$99.25 USDC</text>
+
+  <!-- Time badge -->
+  <rect x="815" y="260" width="40" height="40" rx="8" fill="rgba(52,211,153,0.1)" stroke="#34D399" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="835" y="278" fill="#34D399" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">&lt;5s</text>
+  <text x="835" y="292" fill="#34D399" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">0.75%</text>
+</svg>

@@ -1,4 +1,6 @@
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import MagneticCard from "@/components/ui/MagneticCard";
+import SplitTextReveal from "@/components/ui/SplitTextReveal";
 
 const chains = [
   {
@@ -54,74 +56,68 @@ export default function MultiChain() {
           <AnimateOnScroll>
             <p className="section-label">Multi-Chain</p>
           </AnimateOnScroll>
-          <AnimateOnScroll delay={0.1}>
-            <h2
-              id="multi-chain-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-black text-snow"
-            >
-              One Protocol.{" "}
-              <span className="text-gradient-teal">Multiple Chains.</span> Your
-              Choice.
-            </h2>
-          </AnimateOnScroll>
+          <div className="text-3xl md:text-4xl lg:text-5xl font-black text-snow mt-2">
+            <SplitTextReveal
+              as="h2"
+              text="One Protocol. Multiple Chains. Your Choice."
+              delay={80}
+              stagger={65}
+              className="leading-tight"
+            />
+          </div>
+          <span className="sr-only" id="multi-chain-heading">
+            Multi-Chain: One Protocol. Multiple Chains. Your Choice.
+          </span>
         </div>
 
-        {/* Chain cards */}
+        {/* Chain cards — magnetic */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {chains.map((chain, i) => (
             <AnimateOnScroll key={chain.name} delay={i * 0.1}>
-              <div
-                className={`card group bg-gradient-to-b ${chain.color} border ${chain.borderColor} transition-all duration-400 h-full`}
-              >
-                {/* Chain logo placeholder */}
-                <div className="flex items-center justify-between mb-6">
-                  <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center text-abyss font-black text-sm"
-                    style={{ backgroundColor: chain.bg }}
-                    aria-hidden="true"
-                  >
-                    {chain.symbol}
-                  </div>
-                  <span
-                    className={`text-xs font-semibold uppercase tracking-widest ${chain.labelColor}`}
-                  >
-                    Active
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-bold text-snow mb-6">
-                  {chain.name}
-                </h3>
-
-                <dl className="space-y-4">
-                  <div className="flex justify-between items-center border-b border-white/[0.04] pb-3">
-                    <dt className="text-xs text-pewter uppercase tracking-widest">
-                      Fee
-                    </dt>
-                    <dd
-                      className={`text-2xl font-black font-mono ${chain.labelColor}`}
+              <MagneticCard strength={10} className="h-full">
+                <div
+                  className={`card group bg-gradient-to-b ${chain.color} border ${chain.borderColor} transition-all duration-400 h-full cursor-default`}
+                >
+                  {/* Chain logo */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center text-abyss font-black text-sm"
+                      style={{ backgroundColor: chain.bg }}
+                      aria-hidden="true"
                     >
-                      {chain.fee}
-                    </dd>
+                      {chain.symbol}
+                    </div>
+                    <span
+                      className={`text-xs font-semibold uppercase tracking-widest ${chain.labelColor}`}
+                    >
+                      Active
+                    </span>
                   </div>
-                  <div className="flex justify-between items-center border-b border-white/[0.04] pb-3">
-                    <dt className="text-xs text-pewter uppercase tracking-widest">
-                      Settlement
-                    </dt>
-                    <dd className="text-sm font-mono text-mint font-semibold">
-                      {chain.settlement}
-                    </dd>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <dt className="text-xs text-pewter uppercase tracking-widest">
-                      Best For
-                    </dt>
-                    <dd className="text-sm text-silver-mist text-right max-w-[55%]">
-                      {chain.bestFor}
-                    </dd>
-                  </div>
-                </dl>
-              </div>
+
+                  <h3 className="text-xl font-bold text-snow mb-6">
+                    {chain.name}
+                  </h3>
+
+                  <dl className="space-y-4">
+                    <div className="flex justify-between items-center pb-3" style={{ borderBottom: "1px solid var(--border)" }}>
+                      <dt className="text-xs text-pewter uppercase tracking-widest">Fee</dt>
+                      <dd className={`text-2xl font-black font-mono ${chain.labelColor}`}>
+                        {chain.fee}
+                      </dd>
+                    </div>
+                    <div className="flex justify-between items-center pb-3" style={{ borderBottom: "1px solid var(--border)" }}>
+                      <dt className="text-xs text-pewter uppercase tracking-widest">Settlement</dt>
+                      <dd className="text-sm font-mono text-mint font-semibold">{chain.settlement}</dd>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <dt className="text-xs text-pewter uppercase tracking-widest">Best For</dt>
+                      <dd className="text-sm text-silver-mist text-right max-w-[55%]">
+                        {chain.bestFor}
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </MagneticCard>
             </AnimateOnScroll>
           ))}
         </div>

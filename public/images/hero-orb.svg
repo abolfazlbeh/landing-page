@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" fill="none">
+  <defs>
+    <radialGradient id="orbCore" cx="40%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.35"/>
+      <stop offset="40%" stop-color="#0D9488" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#080B10" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="innerSphere" cx="38%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#67E8F9" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#0D9488" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#042f2e" stop-opacity="0.8"/>
+    </radialGradient>
+    <filter id="blur1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="blur2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="blur3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <clipPath id="orbClip">
+      <circle cx="400" cy="380" r="240"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer ambient glow -->
+  <ellipse cx="400" cy="400" rx="340" ry="320" fill="url(#orbGlow)" filter="url(#blur3)"/>
+
+  <!-- Mid glow ring -->
+  <circle cx="400" cy="380" r="260" fill="none" stroke="#14B8A6" stroke-width="1" stroke-opacity="0.12" filter="url(#blur1)"/>
+  <circle cx="400" cy="380" r="250" fill="none" stroke="#06B6D4" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- Main sphere body -->
+  <circle cx="400" cy="380" r="240" fill="url(#orbCore)"/>
+  <circle cx="400" cy="380" r="238" fill="url(#innerSphere)" opacity="0.7"/>
+
+  <!-- Grid lines on sphere (latitude) clipped to sphere -->
+  <g clip-path="url(#orbClip)" opacity="0.18">
+    <ellipse cx="400" cy="380" rx="240" ry="60" fill="none" stroke="#14B8A6" stroke-width="0.8"/>
+    <ellipse cx="400" cy="380" rx="240" ry="120" fill="none" stroke="#14B8A6" stroke-width="0.8"/>
+    <ellipse cx="400" cy="380" rx="240" ry="180" fill="none" stroke="#14B8A6" stroke-width="0.8"/>
+    <!-- vertical arcs (longitude) -->
+    <ellipse cx="400" cy="380" rx="60" ry="240" fill="none" stroke="#14B8A6" stroke-width="0.8"/>
+    <ellipse cx="400" cy="380" rx="120" ry="240" fill="none" stroke="#14B8A6" stroke-width="0.8"/>
+    <ellipse cx="400" cy="380" rx="180" ry="240" fill="none" stroke="#14B8A6" stroke-width="0.8"/>
+  </g>
+
+  <!-- Specular highlight -->
+  <ellipse cx="340" cy="295" rx="70" ry="45" fill="white" opacity="0.07" filter="url(#blur2)"/>
+  <ellipse cx="330" cy="285" rx="30" ry="18" fill="white" opacity="0.12" filter="url(#blur2)"/>
+
+  <!-- Orbiting ring -->
+  <ellipse cx="400" cy="380" rx="300" ry="90" fill="none" stroke="#14B8A6" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="8 6" transform="rotate(-20 400 380)"/>
+
+  <!-- Floating dots / particles -->
+  <circle cx="620" cy="200" r="3" fill="#14B8A6" opacity="0.6"/>
+  <circle cx="680" cy="320" r="2" fill="#06B6D4" opacity="0.4"/>
+  <circle cx="160" cy="260" r="2.5" fill="#14B8A6" opacity="0.5"/>
+  <circle cx="130" cy="480" r="2" fill="#0D9488" opacity="0.4"/>
+  <circle cx="650" cy="520" r="2" fill="#14B8A6" opacity="0.35"/>
+  <circle cx="580" cy="620" r="1.5" fill="#06B6D4" opacity="0.4"/>
+  <circle cx="220" cy="580" r="2" fill="#14B8A6" opacity="0.3"/>
+  <circle cx="710" cy="420" r="1.5" fill="#14B8A6" opacity="0.45"/>
+
+  <!-- Node connection lines -->
+  <line x1="620" y1="200" x2="680" y2="320" stroke="#14B8A6" stroke-width="0.6" stroke-opacity="0.2"/>
+  <line x1="160" y1="260" x2="130" y2="480" stroke="#14B8A6" stroke-width="0.6" stroke-opacity="0.15"/>
+  <line x1="650" y1="520" x2="580" y2="620" stroke="#14B8A6" stroke-width="0.6" stroke-opacity="0.2"/>
+
+  <!-- Bottom glow -->
+  <ellipse cx="400" cy="600" rx="160" ry="30" fill="#14B8A6" opacity="0.06" filter="url(#blur1)"/>
+</svg>

@@ -9,45 +9,50 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Backgrounds
-        abyss: "#080B10",
-        "deep-sea": "#0D1117",
-        "slate-deep": "#151C25",
-        "night-teal": "#0F2027",
-        // Text
-        snow: "#F0F2F5",
-        "silver-mist": "#94A3B8",
-        pewter: "#64748B",
-        // Accents
-        "teal-bright": "#14B8A6",
+        // ── Theme-aware background tokens ──
+        // These read from CSS variables, so they flip when data-theme changes.
+        // Dark:  abyss=#08090F   | Light: abyss=#F8FAFC  (page bg)
+        // Dark:  deep-sea=#0D1021 | Light: deep-sea=#F1F5F9 (section bg)
+        // Dark:  slate-deep=#131628 | Light: slate-deep=#E8EEF6
+        "abyss":      "var(--bg-primary)",
+        "deep-sea":   "var(--bg-secondary)",
+        "slate-deep": "var(--bg-tertiary)",
+        "night-teal": "var(--bg-elevated)",
+
+        // ── Theme-aware text tokens ──
+        // Dark: snow=#F0F2F5  | Light: snow=#0F172A
+        // Dark: silver-mist=#94A3B8 | Light: silver-mist=#475569
+        // Dark: pewter=#64748B | Light: pewter=#94A3B8
+        "snow":         "var(--text-primary)",
+        "silver-mist":  "var(--text-secondary)",
+        "pewter":       "var(--text-muted)",
+
+        // ── Accent — cyan-teal (midpoint between original teal and blue) ──
+        "teal-bright":   "#06B6D4",   // Tailwind cyan-500 — the sweet spot
+        "teal-deep":     "#0891B2",   // cyan-600 — gradient start, deeper
+        "cyan-electric": "#22D3EE",   // cyan-400 — gradient end, lighter highlight
+
+        // ── Gold (unchanged) ──
         "gold-warm": "#D4A853",
-        "teal-deep": "#0D9488",
-        "cyan-electric": "#06B6D4",
-        amber: "#D4A853",
-        honey: "#F59E0B",
-        // Utility
-        mint: "#34D399",
-        coral: "#F87171",
-        frost: "rgba(240,242,245,0.03)",
-        "glow-teal": "rgba(20,184,166,0.08)",
+        "amber":     "#D4A853",
+        "honey":     "#F59E0B",
+
+        // ── Utility ──
+        "mint":  "#34D399",
+        "coral": "#F87171",
+
+        // ── Glow tokens ──
+        "glow-teal": "rgba(14,165,233,0.08)",
         "glow-gold": "rgba(212,168,83,0.06)",
       },
       fontFamily: {
         sans: ["Satoshi", "General Sans", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
-      fontSize: {
-        display: ["72px", { lineHeight: "80px", fontWeight: "900" }],
-        "display-mobile": ["40px", { lineHeight: "48px", fontWeight: "900" }],
-      },
       backgroundImage: {
-        "gradient-teal": "linear-gradient(135deg, #0D9488, #06B6D4)",
+        "gradient-teal": "linear-gradient(135deg, #0891B2, #22D3EE)",
         "gradient-gold": "linear-gradient(135deg, #D4A853, #F59E0B)",
-        "gradient-bg": "linear-gradient(180deg, #0D1117, #080B10)",
-        "gradient-hero-ambient":
-          "radial-gradient(ellipse at 30% 50%, rgba(13,148,136,0.08), transparent 60%)",
-        "gradient-card-border":
-          "linear-gradient(135deg, rgba(240,242,245,0.06), rgba(240,242,245,0.01))",
+        "gradient-bg":   "linear-gradient(180deg, var(--bg-secondary), var(--bg-primary))",
       },
       borderRadius: {
         sm: "6px",
@@ -62,11 +67,10 @@ const config: Config = {
       },
       animation: {
         "fade-up": "fadeUp 600ms cubic-bezier(0.16,1,0.3,1) forwards",
-        "counter": "counter 1s ease-out forwards",
       },
       keyframes: {
         fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%":   { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
@@ -78,9 +82,9 @@ const config: Config = {
         "600": "600ms",
       },
       boxShadow: {
-        "glow-teal": "0 0 40px rgba(20,184,166,0.15)",
+        "glow-teal": "0 0 40px rgba(6,182,212,0.20)",
         "glow-gold": "0 0 40px rgba(212,168,83,0.15)",
-        "card-hover": "0 8px 32px rgba(20,184,166,0.12)",
+        "card-hover": "0 8px 32px rgba(6,182,212,0.14)",
       },
     },
   },

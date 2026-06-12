@@ -114,10 +114,10 @@ export default function Pricing() {
 
         {/* Comparison table */}
         <AnimateOnScroll delay={0.15}>
-          <div className="overflow-x-auto mb-12 rounded-lg border border-white/[0.04]">
+          <div className="overflow-x-auto mb-12 rounded-lg" style={{ border: "1px solid var(--border)" }}>
             <table className="w-full text-sm" aria-label="Payment gateway fee comparison">
               <thead>
-                <tr className="border-b border-white/[0.04]">
+                <tr className="border-b" style={{ borderColor: "var(--border)" }}>
                   <th className="text-left px-4 py-4 text-pewter font-medium min-w-[160px]">
                     Gateway
                   </th>
@@ -148,13 +148,15 @@ export default function Pricing() {
                 {competitors.map((c, i) => (
                   <tr
                     key={c.name}
-                    className={`border-b border-white/[0.03] ${
-                      c.highlight
-                        ? "bg-teal-bright/[0.04]"
-                        : i % 2 === 0
-                        ? "bg-transparent"
-                        : "bg-white/[0.01]"
+                    className={`border-b ${
+                      c.highlight ? "bg-teal-bright/[0.04]" : i % 2 === 0 ? "" : ""
                     }`}
+                    style={{
+                      borderColor: "var(--border)",
+                      backgroundColor: c.highlight
+                        ? "rgba(var(--accent-rgb), 0.04)"
+                        : "transparent",
+                    }}
                   >
                     <td
                       className={`px-4 py-4 font-semibold ${
@@ -244,7 +246,8 @@ export default function Pricing() {
                 step={1000}
                 value={volume}
                 onChange={(e) => setVolume(Number(e.target.value))}
-                className="w-full h-1.5 bg-white/10 rounded-full appearance-none cursor-pointer accent-teal-bright"
+                className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-teal-bright"
+                style={{ backgroundColor: "var(--border-strong)" }}
                 aria-label={`Monthly payment volume: $${volume.toLocaleString()}`}
               />
               <div className="flex justify-between text-xs text-pewter mt-1">

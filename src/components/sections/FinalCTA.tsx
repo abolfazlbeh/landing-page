@@ -7,26 +7,34 @@ export default function FinalCTA() {
       id="get-started"
       className="section-padding relative overflow-hidden"
       aria-labelledby="cta-heading"
+      style={{ backgroundColor: "var(--bg-secondary)" }}
     >
-      {/* Gradient background */}
+      {/* Accent glows */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-night-teal via-abyss to-abyss pointer-events-none"
-        aria-hidden="true"
-      />
-      {/* Ambient glows */}
-      <div
-        className="absolute top-0 left-1/4 w-[600px] h-[400px] rounded-full bg-teal-deep/15 blur-[120px] pointer-events-none"
+        className="absolute top-0 left-1/4 w-[600px] h-[400px] rounded-full blur-[120px] pointer-events-none"
+        style={{ backgroundColor: "rgba(var(--accent-rgb), 0.10)" }}
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full bg-cyan-electric/10 blur-[100px] pointer-events-none"
+        className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full blur-[100px] pointer-events-none"
+        style={{ backgroundColor: "rgba(var(--accent-rgb), 0.06)" }}
         aria-hidden="true"
       />
 
       <div className="container-narrow relative z-10 text-center">
         <AnimateOnScroll>
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-bright/20 bg-teal-bright/[0.05] text-teal-bright text-xs font-semibold tracking-widest uppercase mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-bright animate-pulse" />
+          <span
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-8"
+            style={{
+              border: "1px solid rgba(var(--accent-rgb), 0.25)",
+              background: "rgba(var(--accent-rgb), 0.06)",
+              color: "var(--accent)",
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full animate-pulse"
+              style={{ backgroundColor: "var(--accent)" }}
+            />
             Powered by WPGP
           </span>
         </AnimateOnScroll>
@@ -34,7 +42,8 @@ export default function FinalCTA() {
         <AnimateOnScroll delay={0.1}>
           <h2
             id="cta-heading"
-            className="text-3xl md:text-5xl lg:text-6xl font-black text-snow mb-6 max-w-3xl mx-auto leading-tight"
+            className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 max-w-3xl mx-auto leading-tight"
+            style={{ color: "var(--text-primary)" }}
           >
             Ready to Accept Payments{" "}
             <span className="text-gradient-teal">Without the Middlemen?</span>
@@ -42,7 +51,7 @@ export default function FinalCTA() {
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={0.2}>
-          <p className="text-lg text-silver-mist mb-12 max-w-xl mx-auto">
+          <p className="text-lg mb-12 max-w-xl mx-auto" style={{ color: "var(--text-secondary)" }}>
             Join the protocol. Start in minutes.
           </p>
         </AnimateOnScroll>

@@ -6,38 +6,60 @@ import {
   Code2,
   Network,
 } from "lucide-react";
+import StickyFeaturePanel, {
+  FeatureItem,
+} from "@/components/ui/StickyFeaturePanel";
+import ScrollTextHighlight from "@/components/ui/ScrollTextHighlight";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
-const trustPoints = [
+const trustFeatures: FeatureItem[] = [
   {
-    icon: Vault,
+    number: "01",
+    icon: <Vault size={18} className="text-mint" aria-hidden="true" />,
     title: "Non-Custodial",
-    body: "No one holds your funds. Ever. Direct wallet-to-wallet settlement.",
+    body: "No one holds your funds. Ever. Direct wallet-to-wallet settlement means no third party ever controls your money.",
+    tag: "Your keys",
+    tagColor: "mint",
   },
   {
-    icon: ScanLine,
+    number: "02",
+    icon: <ScanLine size={18} className="text-mint" aria-hidden="true" />,
     title: "On-Chain Verification",
-    body: "Every payment is cryptographically verified by the smart contract.",
+    body: "Every payment is cryptographically verified by the smart contract. No backend database to trust or tamper with.",
+    tag: "Trustless",
+    tagColor: "mint",
   },
   {
-    icon: ShieldCheck,
+    number: "03",
+    icon: <ShieldCheck size={18} className="text-mint" aria-hidden="true" />,
     title: "Replay Protected",
-    body: "Unique nonces prevent duplicate charges. Impossible to double-spend.",
+    body: "Unique nonces prevent duplicate charges. Impossible to double-spend or replay a past transaction.",
+    tag: "Nonce-based",
+    tagColor: "teal",
   },
   {
-    icon: Atom,
+    number: "04",
+    icon: <Atom size={18} className="text-mint" aria-hidden="true" />,
     title: "Atomic Transactions",
-    body: "Either everything succeeds, or nothing changes. No partial states.",
+    body: "Either everything succeeds, or nothing changes. No partial states, no stuck funds, no manual reconciliation.",
+    tag: "All or nothing",
+    tagColor: "teal",
   },
   {
-    icon: Code2,
+    number: "05",
+    icon: <Code2 size={18} className="text-mint" aria-hidden="true" />,
     title: "Open Source",
-    body: "Every line of contract code is public and auditable.",
+    body: "Every line of contract code is public and auditable. Anyone can verify the protocol is exactly what we claim.",
+    tag: "Fully public",
+    tagColor: "mint",
   },
   {
-    icon: Network,
+    number: "06",
+    icon: <Network size={18} className="text-mint" aria-hidden="true" />,
     title: "Permissionless Bundlers",
-    body: "No single point of failure. If one bundler is down, another picks up.",
+    body: "No single point of failure. If one bundler is down, another picks up the transaction automatically.",
+    tag: "Decentralized",
+    tagColor: "mint",
   },
 ];
 
@@ -45,53 +67,48 @@ export default function Security() {
   return (
     <section
       id="security"
-      className="section-padding bg-deep-sea relative overflow-hidden"
+      className="relative bg-deep-sea"
       aria-labelledby="security-heading"
     >
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-mint/5 blur-[120px] pointer-events-none"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-mint/5 blur-[120px]" />
+      </div>
 
-      <div className="container-narrow relative z-10">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <AnimateOnScroll>
-            <p className="section-label">Security</p>
-          </AnimateOnScroll>
-          <AnimateOnScroll delay={0.1}>
-            <h2
-              id="security-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-black text-snow"
-            >
-              Transparent, Auditable,{" "}
-              <span className="text-gradient-teal">Unstoppable</span>
-            </h2>
-          </AnimateOnScroll>
-        </div>
+      {/* Scroll highlight teaser above the panel */}
+      <div className="container-narrow pt-16 md:pt-[120px] pb-0">
+        <AnimateOnScroll>
+          <p className="section-label">Security</p>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.1}>
+          <h2
+            id="security-heading"
+            className="text-3xl md:text-4xl lg:text-5xl font-black mb-6"
+            style={{ color: "var(--text-primary)" }}
+          >
+            Transparent, Auditable,{" "}
+            <span className="text-gradient-teal">Unstoppable</span>
+          </h2>
+        </AnimateOnScroll>
+        <AnimateOnScroll delay={0.15}>
+          <ScrollTextHighlight
+            text="Every payment on DeMere is governed entirely by open-source smart contract code. There is no company database, no backend server, and no human operator that stands between your customer's wallet and yours. The protocol enforces every rule automatically, on-chain, in real time."
+            className="text-lg leading-relaxed max-w-2xl mb-0"
+          />
+        </AnimateOnScroll>
+      </div>
 
-        {/* Trust grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {trustPoints.map((point, i) => (
-            <AnimateOnScroll key={point.title} delay={i * 0.08}>
-              <div className="card group h-full">
-                <div className="w-12 h-12 rounded-lg bg-mint/10 border border-mint/20 flex items-center justify-center mb-5 transition-colors group-hover:border-mint/40">
-                  <point.icon
-                    size={22}
-                    className="text-mint"
-                    aria-hidden="true"
-                  />
-                </div>
-                <h3 className="text-lg font-semibold text-snow mb-2">
-                  {point.title}
-                </h3>
-                <p className="text-silver-mist text-sm leading-relaxed">
-                  {point.body}
-                </p>
-              </div>
-            </AnimateOnScroll>
-          ))}
-        </div>
+      <div className="relative z-10">
+        {/* Override StickyFeaturePanel to skip its own section label/heading — only show cards */}
+        <StickyFeaturePanel
+          sectionLabel=""
+          headline={
+            <span style={{ color: "var(--text-primary)" }} className="text-xl font-semibold">
+              Six properties that make WPGP{" "}
+              <span className="text-gradient-teal">independently secure</span>
+            </span>
+          }
+          features={trustFeatures}
+        />
       </div>
     </section>
   );

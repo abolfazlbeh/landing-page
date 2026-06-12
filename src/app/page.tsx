@@ -1,7 +1,7 @@
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import Problem from "@/components/sections/Problem";
+import ImpactCarousel from "@/components/sections/ImpactCarousel";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Pricing from "@/components/sections/Pricing";
 import ForMerchants from "@/components/sections/ForMerchants";
@@ -17,7 +17,7 @@ export default function Home() {
       <Navigation />
       <main id="main-content">
         <Hero />
-        <Problem />
+        <ImpactCarousel />
         <HowItWorks />
         <Pricing />
         <ForMerchants />
