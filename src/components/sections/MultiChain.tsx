@@ -1,3 +1,6 @@
+"use client";
+
+import Image from "next/image";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import MagneticCard from "@/components/ui/MagneticCard";
 import SplitTextReveal from "@/components/ui/SplitTextReveal";
@@ -5,36 +8,42 @@ import SplitTextReveal from "@/components/ui/SplitTextReveal";
 const chains = [
   {
     name: "BNB Chain",
-    symbol: "BNB",
+    icon: "/images/chains/bnb.svg",
+    iconBg: "transparent",
     fee: "0.75%",
     settlement: "~3 seconds",
     bestFor: "General commerce",
-    color: "from-yellow-400/10 to-yellow-400/5",
-    borderColor: "border-yellow-400/20 hover:border-yellow-400/40",
-    labelColor: "text-yellow-400",
-    bg: "#F3BA2F",
+    gradientFrom: "rgba(243,186,47,0.08)",
+    gradientTo: "rgba(243,186,47,0.03)",
+    borderColor: "rgba(243,186,47,0.2)",
+    borderHover: "rgba(243,186,47,0.4)",
+    labelColor: "#F3BA2F",
   },
   {
     name: "Base",
-    symbol: "BASE",
+    icon: "/images/chains/base.svg",
+    iconBg: "transparent",
     fee: "0.2%",
     settlement: "~2 seconds",
     bestFor: "Coinbase ecosystem, developers",
-    color: "from-blue-500/10 to-blue-500/5",
-    borderColor: "border-blue-500/20 hover:border-blue-500/40",
-    labelColor: "text-blue-400",
-    bg: "#0052FF",
+    gradientFrom: "rgba(0,82,255,0.08)",
+    gradientTo: "rgba(0,82,255,0.03)",
+    borderColor: "rgba(0,82,255,0.2)",
+    borderHover: "rgba(0,82,255,0.4)",
+    labelColor: "#6B8FF7",
   },
   {
     name: "Polygon",
-    symbol: "POL",
+    icon: "/images/chains/polygon.svg",
+    iconBg: "transparent",
     fee: "0.2%",
     settlement: "~2 seconds",
     bestFor: "High volume, lowest cost",
-    color: "from-purple-500/10 to-purple-500/5",
-    borderColor: "border-purple-500/20 hover:border-purple-500/40",
-    labelColor: "text-purple-400",
-    bg: "#8247E5",
+    gradientFrom: "rgba(130,71,229,0.08)",
+    gradientTo: "rgba(130,71,229,0.03)",
+    borderColor: "rgba(130,71,229,0.2)",
+    borderHover: "rgba(130,71,229,0.4)",
+    labelColor: "#A78BF6",
   },
 ];
 
@@ -70,44 +79,76 @@ export default function MultiChain() {
           </span>
         </div>
 
-        {/* Chain cards — magnetic */}
+        {/* Chain cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {chains.map((chain, i) => (
             <AnimateOnScroll key={chain.name} delay={i * 0.1}>
               <MagneticCard strength={10} className="h-full">
                 <div
-                  className={`card group bg-gradient-to-b ${chain.color} border ${chain.borderColor} transition-all duration-400 h-full cursor-default`}
+                  className="card group h-full cursor-default transition-all duration-400"
+                  style={{
+                    background: `linear-gradient(to bottom, ${chain.gradientFrom}, ${chain.gradientTo})`,
+                    border: `1px solid ${chain.borderColor}`,
+                  }}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLDivElement).style.borderColor = chain.borderHover)
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLDivElement).style.borderColor = chain.borderColor)
+                  }
                 >
-                  {/* Chain logo */}
+                  {/* Chain logo row */}
                   <div className="flex items-center justify-between mb-6">
+                    {/* Icon */}
                     <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center text-abyss font-black text-sm"
-                      style={{ backgroundColor: chain.bg }}
-                      aria-hidden="true"
+                      className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0 shadow-lg"
+                      style={{ backgroundColor: chain.iconBg }}
                     >
-                      {chain.symbol}
+                      <Image
+                        src={chain.icon}
+                        alt={`${chain.name} logo`}
+                        width={36}
+                        height={36}
+                        className="object-contain"
+                      />
                     </div>
+
+                    {/* Active badge */}
                     <span
-                      className={`text-xs font-semibold uppercase tracking-widest ${chain.labelColor}`}
+                      className="text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                      style={{
+                        color: chain.labelColor,
+                        backgroundColor: `${chain.labelColor}18`,
+                        border: `1px solid ${chain.labelColor}35`,
+                      }}
                     >
                       Active
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-snow mb-6">
-                    {chain.name}
-                  </h3>
+                  <h3 className="text-xl font-bold text-snow mb-6">{chain.name}</h3>
 
                   <dl className="space-y-4">
-                    <div className="flex justify-between items-center pb-3" style={{ borderBottom: "1px solid var(--border)" }}>
+                    <div
+                      className="flex justify-between items-center pb-3"
+                      style={{ borderBottom: "1px solid var(--border)" }}
+                    >
                       <dt className="text-xs text-pewter uppercase tracking-widest">Fee</dt>
-                      <dd className={`text-2xl font-black font-mono ${chain.labelColor}`}>
+                      <dd
+                        className="text-2xl font-black font-mono"
+                        style={{ color: chain.labelColor }}
+                      >
                         {chain.fee}
                       </dd>
                     </div>
-                    <div className="flex justify-between items-center pb-3" style={{ borderBottom: "1px solid var(--border)" }}>
+                    <div
+                      className="flex justify-between items-center pb-3"
+                      style={{ borderBottom: "1px solid var(--border)" }}
+                    >
                       <dt className="text-xs text-pewter uppercase tracking-widest">Settlement</dt>
-                      <dd className="text-sm font-mono text-mint font-semibold">{chain.settlement}</dd>
+                      <dd className="text-sm font-mono text-mint font-semibold">
+                        {chain.settlement}
+                      </dd>
                     </div>
                     <div className="flex justify-between items-center">
                       <dt className="text-xs text-pewter uppercase tracking-widest">Best For</dt>
