@@ -1,6 +1,7 @@
 import { ExternalLink, Terminal } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
+import TypewriterCode from "@/components/ui/TypewriterCode";
 
 const integrationPaths = [
   {
@@ -114,7 +115,7 @@ export default function ForDevelopers() {
           {/* ── RIGHT: code block + photo ── */}
           <div className="space-y-6">
             <AnimateOnScroll delay={0.25}>
-              <div className="rounded-xl overflow-hidden border code-surface" style={{ borderColor: "var(--border)" }} aria-label="Code snippet example">
+              <div className="rounded-xl overflow-hidden border code-surface" style={{ borderColor: "var(--border)" }} aria-label="Code snippet — live typewriter">
                 <div className="flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: "var(--border)", backgroundColor: "rgba(0,0,0,0.3)" }}>
                   <div className="flex items-center gap-2">
                     <span className="w-3 h-3 rounded-full bg-coral/60" aria-hidden="true" />
@@ -124,23 +125,12 @@ export default function ForDevelopers() {
                   <span className="text-xs text-pewter font-mono">integration.ts</span>
                   <span className="text-xs text-pewter font-mono opacity-0 select-none">—</span>
                 </div>
-                <pre className="p-6 overflow-x-auto text-xs font-mono leading-relaxed">
-                  <code>
-                    {codeSnippet.split("\n").map((line, i) => (
-                      <span key={i} className="block">
-                        {line.split(/(import|from|const|await|async|"[^"]*"|\/\/[^\n]*)/g).map((part, j) => {
-                          if (["import","from","const","await","async"].includes(part))
-                            return <span key={j} className="text-cyan-electric">{part}</span>;
-                          if (part.startsWith('"') && part.endsWith('"'))
-                            return <span key={j} className="text-mint">{part}</span>;
-                          if (part.startsWith("//"))
-                            return <span key={j} className="text-pewter">{part}</span>;
-                          return <span key={j} className="text-snow/80">{part}</span>;
-                        })}
-                      </span>
-                    ))}
-                  </code>
-                </pre>
+                <TypewriterCode
+                  code={codeSnippet}
+                  charSpeed={30}
+                  endPause={2000}
+                  startPause={500}
+                />
               </div>
             </AnimateOnScroll>
 
