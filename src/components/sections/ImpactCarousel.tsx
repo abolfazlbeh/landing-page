@@ -59,7 +59,9 @@ const SLIDES = [
 ];
 
 const N = SLIDES.length;
-const TARGET_SCALE = 0.62;
+// Card 0 starts at INITIAL_SCALE (fills viewport) and zooms to scale(1).
+// All cards share the same natural size — no height mismatch on transition.
+const INITIAL_SCALE = 1.62;
 const ZOOM_VH = 130;
 const STEP_VH = 110;
 const TOTAL_VH = ZOOM_VH + STEP_VH * (N - 1);
@@ -116,8 +118,8 @@ export default function ImpactCarousel() {
       const zoomF     = ZOOM_VH / TOTAL_VH;
       const zoomP     = EASE(Math.min(1, raw / zoomF));
 
-      // Scale ONLY the photo wrapper of card 0, not the text
-      const scaleVal = 1 - (1 - TARGET_SCALE) * zoomP;
+      // Card 0: starts at INITIAL_SCALE (oversized, fills viewport), zooms to scale(1)
+      const scaleVal = INITIAL_SCALE - (INITIAL_SCALE - 1) * zoomP;
       const radVal   = 20 * zoomP;
       if (photoWrapRef.current) {
         photoWrapRef.current.style.transform    = `scale(${scaleVal})`;
@@ -246,14 +248,12 @@ export default function ImpactCarousel() {
                     ref={(el) => { cardRefs.current[0] = el; }}
                     style={{
                       position: "relative",
-                      width: "100vw",
-                      height: "100vh",
+                      width: "min(900px, 90vw)",
+                      height: "min(calc(100vh - 190px), 580px)",
                     }}
                     aria-label={slide.headline}
                   >
-                    {/* Photo + overlay + text ALL inside the scale wrapper.
-                        Text is counter-scaled so it reads at natural size.
-                        This makes text physically move with the card. */}
+                    {/* photoWrapRef: same size as card, starts at INITIAL_SCALE */}
                     <div
                       ref={photoWrapRef}
                       style={{
@@ -263,6 +263,7 @@ export default function ImpactCarousel() {
                         borderRadius: "0px",
                         transformOrigin: "center center",
                         willChange: "transform",
+                        transform: `scale(${INITIAL_SCALE})`,
                       }}
                     >
                       {/* Photo */}
@@ -317,12 +318,14 @@ export default function ImpactCarousel() {
                         {slide.tag}
                       </div>
 
-                      {/* Text — inside scale wrapper so it moves with card,
-                          but counter-scaled via textWrapRef so size stays natural */}
+                      {/* Text — counter-scaled to INITIAL_SCALE so font reads at natural size */}
                       <div
                         ref={textWrapRef}
                         className="absolute bottom-0 left-0 right-0 px-10 pb-10"
-                        style={{ transformOrigin: "left bottom" }}
+                        style={{
+                          transformOrigin: "left bottom",
+                          transform: `scale(${1 / INITIAL_SCALE})`,
+                        }}
                       >
                         <div
                           className="cs-stat mb-5 flex items-baseline gap-3"

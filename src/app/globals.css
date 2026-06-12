@@ -176,30 +176,41 @@
   }
 
   /* Buttons */
+
+  /* btn-primary — glass with accent tint */
   .btn-primary {
     @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-medium
            transition-all duration-[400ms]
-           hover:brightness-110 hover:scale-[1.02]
+           hover:scale-[1.02]
            active:scale-[0.98]
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-    background: linear-gradient(135deg, var(--accent-deep), var(--accent-light));
-    color: #ffffff;
+    background: rgba(var(--accent-rgb), 0.14);
+    color: var(--accent);
+    border: 1px solid rgba(var(--accent-rgb), 0.32);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
-  .btn-primary:hover { box-shadow: var(--shadow-glow); }
+  .btn-primary:hover {
+    background: rgba(var(--accent-rgb), 0.22);
+    border-color: rgba(var(--accent-rgb), 0.50);
+    box-shadow: 0 0 28px rgba(var(--accent-rgb), 0.16);
+  }
 
-  /* Button secondary */
+  /* btn-secondary — lighter glass */
   .btn-secondary {
     @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-medium
            transition-all duration-[400ms]
            active:scale-[0.98]
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
     color: var(--text-primary);
-    background: transparent;
+    background: rgba(var(--accent-rgb), 0.05);
     border: 1px solid var(--border-strong);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
   .btn-secondary:hover {
-    background: rgba(var(--accent-rgb), 0.06);
-    border-color: rgba(var(--accent-rgb), 0.35);
+    background: rgba(var(--accent-rgb), 0.10);
+    border-color: rgba(var(--accent-rgb), 0.28);
   }
 
   .btn-ghost {
@@ -210,7 +221,7 @@
   }
   .btn-ghost:hover { background: rgba(var(--accent-rgb), 0.08); }
 
-  /* Button premium (gold) */
+  /* btn-premium — ONLY gradient button ("Download for iOS") */
   .btn-premium {
     @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-md font-semibold
            transition-all duration-[400ms]
