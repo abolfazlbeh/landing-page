@@ -351,7 +351,7 @@ export default function ForMerchants() {
       aria-labelledby="merchants-heading"
     >
       <div
-        className="sticky top-0 h-screen overflow-hidden flex items-center justify-center"
+        className="sticky top-0 h-screen overflow-hidden flex flex-col items-center justify-center gap-6 pt-28"
         style={{ backgroundColor: "var(--bg-primary)" }}
       >
         {/* Ambient glow */}
@@ -361,10 +361,10 @@ export default function ForMerchants() {
           style={{ background: "radial-gradient(ellipse at 50% 55%, rgba(6,182,212,0.06), transparent 65%)" }}
         />
 
-        {/* Heading */}
+        {/* Heading — in normal flex flow, sits above card stack */}
         <div
           ref={headingRef}
-          className="absolute top-0 left-0 right-0 z-30 pt-10 text-center pointer-events-none"
+          className="text-center pointer-events-none flex-shrink-0 w-full"
         >
           <p className="section-label">For Merchants</p>
           <h2
@@ -377,10 +377,10 @@ export default function ForMerchants() {
           </h2>
         </div>
 
-        {/* Card stack */}
+        {/* Card stack — always below the heading, never overlaps */}
         <div
           className="relative"
-          style={{ width: "min(520px, 88vw)", height: "min(620px, 74vh)" }}
+          style={{ width: "min(520px, 88vw)", height: "min(560px, calc(100vh - 160px))" }}
         >
           {CARDS.map((card, i) => (
             <div
