@@ -16,7 +16,7 @@ export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 32);
+    const handleScroll = () => setScrolled(window.scrollY > 48);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -33,36 +33,63 @@ export default function Navigation() {
   }, [menuOpen]);
 
   return (
+    /*
+     * The <header> is always full-width and fixed.
+     * When scrolled: it becomes a transparent positioning shell with padding,
+     *   and the inner pill container gets glass + rounded corners + shadow.
+     * When at top: full-width transparent bar, no pill.
+     */
     <header
       role="banner"
-      className="fixed top-0 inset-x-0 z-50 h-[72px] flex items-center transition-all duration-[400ms]"
+      className="fixed top-0 inset-x-0 z-50 flex items-start justify-center transition-all duration-500"
       style={{
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        backgroundColor: scrolled ? "var(--nav-bg)" : "transparent",
-        borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
+        padding: scrolled ? "12px 16px 0" : "0",
+        // No background on the shell — it lives on the pill
       }}
     >
-      <div className="container-narrow w-full flex items-center justify-between">
-
+      {/* ── PILL / NAV CONTAINER ── */}
+      <div
+        className="w-full flex items-center justify-between transition-all duration-500"
+        style={{
+          maxWidth: scrolled ? "1100px" : "none",
+          height: scrolled ? "56px" : "72px",
+          padding: scrolled ? "0 20px" : "0 2rem",
+          // Full-width before scroll, pill after
+          borderRadius: scrolled ? "999px" : "0px",
+          // Glass on scroll
+          backdropFilter: scrolled ? "blur(20px)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
+          backgroundColor: scrolled ? "var(--nav-bg)" : "transparent",
+          border: scrolled ? "1px solid var(--border)" : "1px solid transparent",
+          boxShadow: scrolled
+            ? "0 4px 24px rgba(0,0,0,0.12), 0 1px 0 rgba(255,255,255,0.05) inset"
+            : "none",
+        }}
+      >
         {/* Logo */}
         <a
           href="/"
-          className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 rounded-sm"
-          style={{ "--tw-ring-color": "var(--accent)" } as React.CSSProperties}
+          className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 rounded-sm flex-shrink-0"
           aria-label="DeMere home"
         >
-          <span className="text-xl font-black tracking-tight" style={{ color: "var(--text-primary)" }}>
+          <span
+            className="font-black tracking-tight transition-all duration-500"
+            style={{
+              fontSize: scrolled ? "18px" : "20px",
+              color: "var(--text-primary)",
+            }}
+          >
             De<span className="text-gradient-teal">Mere</span>
           </span>
         </a>
 
         {/* Desktop nav links */}
-        <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+        <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 rounded-sm px-1"
+              className="text-sm font-medium transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 rounded-sm px-1 whitespace-nowrap"
               style={{ color: "var(--text-secondary)" }}
               onMouseEnter={e => (e.currentTarget.style.color = "var(--text-primary)")}
               onMouseLeave={e => (e.currentTarget.style.color = "var(--text-secondary)")}
@@ -72,10 +99,14 @@ export default function Navigation() {
           ))}
         </nav>
 
-        {/* Right side: theme toggle + CTA */}
-        <div className="flex items-center gap-3">
+        {/* Right: theme toggle + CTA */}
+        <div className="flex items-center gap-2 flex-shrink-0">
           <ThemeToggle />
-          <a href="#get-started" className="hidden lg:inline-flex btn-primary text-sm">
+          <a
+            href="#get-started"
+            className="hidden lg:inline-flex btn-primary text-sm"
+            style={{ padding: scrolled ? "8px 18px" : undefined }}
+          >
             Start Accepting Payments
           </a>
           {/* Mobile hamburger */}
@@ -115,7 +146,11 @@ export default function Navigation() {
               </a>
             ))}
           </nav>
-          <a href="#get-started" className="btn-primary text-center mt-4" onClick={() => setMenuOpen(false)}>
+          <a
+            href="#get-started"
+            className="btn-primary text-center mt-4"
+            onClick={() => setMenuOpen(false)}
+          >
             Start Accepting Payments
           </a>
         </div>

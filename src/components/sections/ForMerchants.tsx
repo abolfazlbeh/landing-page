@@ -202,8 +202,11 @@ const CARDS = [
     tag: "WooCommerce",
     title: "Live in 15 minutes.",
     body: "Install the plugin and start accepting crypto. WordPress powers 43% of the web.",
-    bgDark:  "linear-gradient(160deg, #061520 0%, #0A2030 100%)",
-    bgLight: "linear-gradient(160deg, #E0F7FA 0%, #B2EBF2 100%)",
+    // Glass: semi-transparent tint of the accent color + backdrop blur
+    bgDark:  "rgba(6,21,32, 0.72)",
+    bgLight: "rgba(224,247,250, 0.72)",
+    borderDark:  "rgba(6,182,212, 0.18)",
+    borderLight: "rgba(6,182,212, 0.35)",
     accent: "#06B6D4",
     Visual: Visual15m,
   },
@@ -212,8 +215,10 @@ const CARDS = [
     tag: "Shopify",
     title: "4.4 million stores, one integration.",
     body: "Native app. One-click setup. Payments land in your wallet, not Shopify's.",
-    bgDark:  "linear-gradient(160deg, #061A10 0%, #0A2818 100%)",
-    bgLight: "linear-gradient(160deg, #E0F2EE 0%, #B2DFDB 100%)",
+    bgDark:  "rgba(6,26,16, 0.72)",
+    bgLight: "rgba(224,242,238, 0.72)",
+    borderDark:  "rgba(34,211,238, 0.18)",
+    borderLight: "rgba(34,211,238, 0.35)",
     accent: "#22D3EE",
     Visual: VisualShopifyCounter,
   },
@@ -222,8 +227,10 @@ const CARDS = [
     tag: "Point of Sale",
     title: "QR. Tap. Done.",
     body: "Accept in-person payments on any phone or tablet. No card reader needed.",
-    bgDark:  "linear-gradient(160deg, #12062A 0%, #1C0A3A 100%)",
-    bgLight: "linear-gradient(160deg, #EDE7F6 0%, #D1C4E9 100%)",
+    bgDark:  "rgba(18,6,42, 0.72)",
+    bgLight: "rgba(237,231,246, 0.72)",
+    borderDark:  "rgba(167,139,246, 0.18)",
+    borderLight: "rgba(167,139,246, 0.35)",
     accent: "#A78BF6",
     Visual: VisualQR,
   },
@@ -232,8 +239,10 @@ const CARDS = [
     tag: "Developer SDK",
     title: "Any stack. Any language.",
     body: "TypeScript, Python, PHP, Ruby, Go. The ABI is public. No approval needed.",
-    bgDark:  "linear-gradient(160deg, #060E20 0%, #0A1830 100%)",
-    bgLight: "linear-gradient(160deg, #E3F2FD 0%, #BBDEFB 100%)",
+    bgDark:  "rgba(6,14,32, 0.72)",
+    bgLight: "rgba(227,242,253, 0.72)",
+    borderDark:  "rgba(56,189,248, 0.18)",
+    borderLight: "rgba(56,189,248, 0.35)",
     accent: "#38BDF8",
     Visual: VisualSDKLangs,
   },
@@ -242,8 +251,10 @@ const CARDS = [
     tag: "Settlement",
     title: "Funds arrive in seconds.",
     body: "Under 5 seconds to your wallet. No holding periods. No rolling reserves.",
-    bgDark:  "linear-gradient(160deg, #061A14 0%, #0A2A1C 100%)",
-    bgLight: "linear-gradient(160deg, #E8F5E9 0%, #C8E6C9 100%)",
+    bgDark:  "rgba(6,26,20, 0.72)",
+    bgLight: "rgba(232,245,233, 0.72)",
+    borderDark:  "rgba(52,211,153, 0.18)",
+    borderLight: "rgba(52,211,153, 0.35)",
     accent: "#34D399",
     Visual: VisualPulse,
   },
@@ -252,8 +263,10 @@ const CARDS = [
     tag: "Token Rewards",
     title: "Get paid to accept payments.",
     body: "Earn WPGP tokens on every transaction. Your effective fee shrinks as the token grows.",
-    bgDark:  "linear-gradient(160deg, #1A1006 0%, #28180A 100%)",
-    bgLight: "linear-gradient(160deg, #FFF8E1 0%, #FFECB3 100%)",
+    bgDark:  "rgba(26,16,6, 0.72)",
+    bgLight: "rgba(255,248,225, 0.72)",
+    borderDark:  "rgba(212,168,83, 0.18)",
+    borderLight: "rgba(212,168,83, 0.35)",
     accent: "#D4A853",
     Visual: VisualTokens,
   },
@@ -322,9 +335,12 @@ export default function ForMerchants() {
           card.style.opacity   = "1";
 
         } else if (i === stepIndex + 1) {
-          // Incoming card — slides up from 100% below
-          const yPct = (1 - stepP) * 100;
-          card.style.transform = `translateY(${yPct}%)`;
+          // Incoming card — starts GAP_PX below the container bottom, slides up
+          // At stepP=0: translateY(calc(100% + GAP_PX)) — gap visible below top card
+          // At stepP=1: translateY(0) — fully covering
+          const GAP_PX = 20;
+          const startOffset = `calc(${(1 - stepP) * 100}% + ${(1 - stepP) * GAP_PX}px)`;
+          card.style.transform = `translateY(${startOffset})`;
           card.style.zIndex    = String(i + 2);
           card.style.opacity   = "1";
 
@@ -391,12 +407,15 @@ export default function ForMerchants() {
                 borderRadius: 24,
                 overflow: "hidden",
                 background: isLight ? card.bgLight : card.bgDark,
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                border: `1px solid ${isLight ? card.borderLight : card.borderDark}`,
                 transform: i === 0 ? "translateY(0) scale(1)" : "translateY(100%)",
                 zIndex: i + 1,
                 willChange: "transform",
                 boxShadow: isLight
-                  ? "0 24px 60px rgba(0,0,0,0.12), 0 1px 0 rgba(255,255,255,0.8) inset"
-                  : "0 24px 60px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.05) inset",
+                  ? `0 24px 60px rgba(0,0,0,0.10), 0 1px 0 rgba(255,255,255,0.6) inset`
+                  : `0 24px 60px rgba(0,0,0,0.45), 0 1px 0 rgba(255,255,255,0.06) inset`,
               }}
               aria-label={card.title}
             >
