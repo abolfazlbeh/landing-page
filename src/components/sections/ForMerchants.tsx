@@ -82,7 +82,7 @@ function VisualQR({ accent }: { accent: string }) {
         }}
       >
         <QRCode
-          value="https://pay.demere.io/invoice/demo-abc123"
+          value="https://paypax.me/invoice/demo-abc123"
           size={130}
           color={accent}
           bgColor="transparent"

@@ -84,9 +84,9 @@ export default function Problem() {
                 <p className="text-2xl font-black text-coral font-mono">2.9%<span className="text-sm font-normal" style={{ color: "var(--text-muted)" }}> +$0.30</span></p>
               </div>
 
-              {/* Chip: DeMere comparison */}
+              {/* Chip: PayPax comparison */}
               <div className="absolute bottom-4 left-4 bg-teal-bright text-abyss text-xs font-bold px-3 py-2 rounded-full shadow-glow-teal whitespace-nowrap">
-                DeMere: 0.75% · instant
+                PayPax: 0.75% · instant
               </div>
 
             </div>

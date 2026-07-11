@@ -3,7 +3,7 @@ import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 
 const features = [
-  { icon: Fuel,   text: "Zero gas fees — DeMere covers them." },
+  { icon: Fuel,   text: "Zero gas fees — PayPax covers them." },
   { icon: Key,    text: "Self-custody. Your keys, always yours." },
   { icon: Globe,  text: "One wallet for BNB, Base, and Polygon." },
   { icon: Coins,  text: "Earn WPGP tokens on every payment." },
@@ -29,7 +29,7 @@ export default function WalletSection() {
           <div>
             <AnimateOnScroll>
               <p className="section-label" style={{ color: "#D4A853" }}>
-                DeMere Wallet
+                PayPax Wallet
               </p>
             </AnimateOnScroll>
 

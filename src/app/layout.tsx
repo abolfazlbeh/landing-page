@@ -4,13 +4,13 @@ import CursorGlow from "@/components/ui/CursorGlow";
 import ThemeProvider from "@/components/ui/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "DeMere — Accept Crypto Payments Directly. No Middlemen.",
+  title: "PayPax — Accept Crypto Payments Directly. No Middlemen.",
   description:
-    "DeMere is the open payment gateway for merchants. Accept stablecoins with fees under 1%, instant settlement, and no chargebacks. Powered by the WPGP protocol on BNB Chain, Base, and Polygon.",
+    "PayPax is the open payment gateway for merchants. Accept stablecoins with fees under 1%, instant settlement, and no chargebacks. Powered by the WPGP protocol on BNB Chain, Base, and Polygon.",
   keywords: [
     "crypto payment gateway",
     "accept crypto payments",
-    "DeMere payments",
+    "PayPax payments",
     "stablecoin payments",
     "merchant crypto",
     "USDC payment gateway",
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
     "instant settlement blockchain payments",
   ],
   openGraph: {
-    title: "DeMere — The Open Payment Gateway",
+    title: "PayPax — The Open Payment Gateway",
     description:
       "Accept crypto payments directly. 0.75% fees. Instant settlement. No middlemen. Powered by WPGP.",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "DeMere" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PayPax" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DeMere — The Open Payment Gateway",
+    title: "PayPax — The Open Payment Gateway",
     description:
       "Accept crypto payments directly. 0.75% fees. Instant settlement. No middlemen. Powered by WPGP.",
     images: ["/og-image.png"],
@@ -66,7 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `
               (function() {
                 try {
-                  var saved = localStorage.getItem('demere-theme');
+                  var saved = localStorage.getItem('paypax-theme');
                   var theme = (saved === 'light' || saved === 'dark')
                     ? saved
                     : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');

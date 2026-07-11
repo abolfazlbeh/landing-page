@@ -32,6 +32,7 @@
   /* Gold */
   --gold:           #D4A853;
   --gold-light:     #F59E0B;
+  --gold-rgb:       212, 168, 83;
 
   /* Utility */
   --success:        #34D399;
@@ -78,6 +79,7 @@
   /* Gold */
   --gold:           #B45309;
   --gold-light:     #D97706;
+  --gold-rgb:       180, 83, 9;
 
   /* Utility */
   --success:        #059669;

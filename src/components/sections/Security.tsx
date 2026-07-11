@@ -91,7 +91,7 @@ export default function Security() {
         </AnimateOnScroll>
         <AnimateOnScroll delay={0.15}>
           <ScrollTextHighlight
-            text="Every payment on DeMere is governed entirely by open-source smart contract code. There is no company database, no backend server, and no human operator that stands between your customer's wallet and yours. The protocol enforces every rule automatically, on-chain, in real time."
+            text="Every payment on PayPax is governed entirely by open-source smart contract code. There is no company database, no backend server, and no human operator that stands between your customer's wallet and yours. The protocol enforces every rule automatically, on-chain, in real time."
             className="text-lg leading-relaxed max-w-2xl mb-0"
           />
         </AnimateOnScroll>

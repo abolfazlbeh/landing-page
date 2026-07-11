@@ -196,7 +196,7 @@ export default function ImpactCarousel() {
         >
           <p className="section-label">Real Impact</p>
           <h2 className="text-3xl md:text-4xl font-black" style={{ color: "var(--text-primary)" }}>
-            How DeMere changes{" "}
+            How PayPax changes{" "}
             <span className="text-gradient-teal">everyday life</span>
           </h2>
           <div className="flex items-center justify-center gap-2 mt-4" role="tablist">

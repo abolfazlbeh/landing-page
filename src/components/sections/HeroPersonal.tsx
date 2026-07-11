@@ -1,28 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import HeroToggle from "@/components/ui/HeroToggle";
 
 const metrics = [
-  { label: "Platform Fee", value: "0.75%", sub: "BNB Chain" },
-  { label: "Settlement", value: "< 5s", sub: "All chains" },
-  { label: "Chargebacks", value: "Zero", sub: "Impossible by design" },
-  { label: "Chains", value: "3", sub: "V2 launch" },
+  { label: "Gas Fees",      value: "Zero",  sub: "PayPax covers them" },
+  { label: "Payment Time",  value: "< 5s",  sub: "All chains"         },
+  { label: "Self-Custody",  value: "100%",  sub: "Your keys, always"  },
+  { label: "Token Rewards", value: "WPGP",  sub: "Earn on every pay"  },
 ];
 
-export default function Hero() {
+export default function HeroPersonal() {
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-      aria-label="Hero"
+      aria-label="Hero — Personal"
     >
-      {/* Ambient glows sit behind the dot grid */}
+      {/* Ambient glows — gold palette */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-1/3 left-1/4 w-[700px] h-[700px] rounded-full bg-teal-deep/10 blur-[140px]" />
-        <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] rounded-full bg-cyan-electric/6 blur-[100px]" />
+        <div className="absolute top-1/3 left-1/4 w-[700px] h-[700px] rounded-full bg-gold-warm/8 blur-[140px]" />
+        <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] rounded-full bg-honey/5 blur-[100px]" />
       </div>
 
       {/* ── FLOATING PHOTO CLUSTER (right side, desktop only) ── */}
@@ -30,7 +30,7 @@ export default function Hero() {
         className="hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 z-10 pointer-events-none w-[380px] h-[520px]"
         aria-hidden="true"
       >
-        {/* Main photo — merchant at checkout */}
+        {/* Main photo */}
         <motion.div
           initial={{ opacity: 0, y: 30, rotate: -3 }}
           animate={{ opacity: 1, y: 0, rotate: -3 }}
@@ -38,16 +38,16 @@ export default function Hero() {
           className="absolute top-0 right-0"
         >
           <PhotoPlaceholder
-            hint="A merchant (shop owner / café owner) smiling behind a counter, warm natural lighting, candid feel. Portrait orientation. Recommended: 400×530px WebP."
+            hint="Person smiling while using a smartphone to pay at a café, candid moment, warm natural lighting, portrait orientation. Recommended: 400×530px WebP."
             className="w-[210px] shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
             aspectRatio="aspect-[3/4]"
           />
-          <div className="absolute -bottom-4 -left-6 bg-teal-bright text-abyss text-xs font-bold px-3 py-1.5 rounded-full shadow-glow-teal whitespace-nowrap">
-            ✓ Settled in 3s
+          <div className="absolute -bottom-4 -left-6 text-abyss text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap shadow-glow-gold bg-gradient-gold">
+            ⚡ Paid in 3s
           </div>
         </motion.div>
 
-        {/* Secondary photo — customer scanning QR */}
+        {/* Secondary photo */}
         <motion.div
           initial={{ opacity: 0, y: 40, rotate: 4 }}
           animate={{ opacity: 1, y: 0, rotate: 4 }}
@@ -55,30 +55,33 @@ export default function Hero() {
           className="absolute top-24 right-52"
         >
           <PhotoPlaceholder
-            hint="Customer holding a smartphone scanning a QR code to pay — close-up of hands + phone screen. Square crop. Recommended: 200×200px WebP."
+            hint="Close-up of a phone screen showing a green payment confirmed screen, dark UI, glowing confirmation. Square crop. Recommended: 200×200px WebP."
             className="w-[150px] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"
             aspectRatio="aspect-square"
           />
-          <div className="absolute -top-3 -right-3 chip-overlay text-teal-bright text-[10px] font-bold px-2 py-1 rounded-lg shadow-lg">
+          <div className="absolute -top-3 -right-3 chip-overlay text-gold-warm text-[10px] font-bold px-2 py-1 rounded-lg shadow-lg">
             WPGP
           </div>
         </motion.div>
 
-        {/* Floating stat chip */}
+        {/* Floating token reward chip */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
           className="absolute bottom-24 right-12 chip-overlay rounded-xl px-4 py-3 shadow-xl"
         >
-          <p className="text-xs mb-0.5" style={{ color: "var(--text-muted)" }}>Saved vs Stripe</p>
-          <p className="text-xl font-black font-mono text-mint">$2,100<span className="text-sm font-normal" style={{ color: "var(--text-muted)" }}>/mo</span></p>
+          <p className="text-xs mb-0.5 text-pewter">Tokens earned</p>
+          <p className="text-xl font-black font-mono text-gold-warm">
+            +12.5 <span className="text-sm font-normal text-pewter">WPGP</span>
+          </p>
         </motion.div>
       </div>
 
       {/* ── MAIN CONTENT ── */}
       <div className="container-narrow relative z-10 pt-[96px] pb-0">
         <div className="max-w-5xl mx-auto lg:mx-0 text-center lg:text-left lg:max-w-[600px]">
+
           {/* Audience toggle */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -89,26 +92,28 @@ export default function Hero() {
             <HeroToggle />
           </motion.div>
 
-          {/* Protocol badge */}
+          {/* Protocol badge — gold */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="mb-8"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-bright/25 bg-teal-bright/[0.05] text-teal-bright text-xs font-semibold tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-bright animate-pulse" />
+            <span
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-warm/25 bg-gold-warm/[0.05] text-gold-warm text-xs font-semibold tracking-widest uppercase"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-gold-warm animate-pulse" />
               Powered by the WPGP Open Protocol
             </span>
           </motion.div>
 
-          {/* Headline — word-by-word reveal */}
+          {/* Headline */}
           <h1
             className="text-[40px] leading-[52px] md:text-[68px] md:leading-[78px] lg:text-[76px] lg:leading-[84px] font-black text-snow mb-6 tracking-tight"
-            aria-label="Accept Crypto Payments. No Middlemen. No Delays."
+            aria-label="Pay Anywhere. Zero Gas. Full Custody."
           >
             <div className="block overflow-hidden">
-              {"Accept Crypto Payments.".split(" ").map((word, i) => (
+              {"Pay Anywhere.".split(" ").map((word, i) => (
                 <motion.span
                   key={i}
                   className="inline-block mr-[0.22em]"
@@ -122,10 +127,10 @@ export default function Hero() {
               ))}
             </div>
             <div className="block overflow-hidden mt-1">
-              {"No Middlemen.".split(" ").map((word, i) => (
+              {"Zero Gas.".split(" ").map((word, i) => (
                 <motion.span
                   key={i}
-                  className="inline-block mr-[0.22em] text-gradient-teal"
+                  className="inline-block mr-[0.22em] text-gradient-gold"
                   initial={{ y: "110%", opacity: 0 }}
                   animate={{ y: "0%", opacity: 1 }}
                   transition={{ duration: 0.7, delay: 0.6 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
@@ -134,9 +139,9 @@ export default function Hero() {
                   {word}
                 </motion.span>
               ))}
-              {"No Delays.".split(" ").map((word, i) => (
+              {"Full Custody.".split(" ").map((word, i) => (
                 <motion.span
-                  key={`d${i}`}
+                  key={`fc${i}`}
                   className="inline-block mr-[0.22em]"
                   initial={{ y: "110%", opacity: 0 }}
                   animate={{ y: "0%", opacity: 1 }}
@@ -156,9 +161,9 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 1.05, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-silver-mist leading-relaxed mb-10 max-w-lg"
           >
-            PayPax is the payment gateway where every transaction settles
-            directly between customer wallet and merchant wallet — in seconds,
-            with fees under 1%.
+            PayPax Wallet lets you pay crypto merchants in seconds — no gas fees,
+            no complexity. USDC and USDT straight from your wallet. Your keys,
+            always yours.
           </motion.p>
 
           {/* CTAs */}
@@ -168,13 +173,13 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mb-20"
           >
-            <a href="https://docs.paypax.xyz" className="btn-primary text-base group">
-              Start Accepting Payments
-              <ArrowRight size={18} aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1" />
+            <a href="#" className="btn-premium text-base group">
+              <Download size={18} aria-hidden="true" />
+              Download PayPax Wallet
             </a>
-            <a href="#" className="btn-secondary text-base">
-              <FileText size={18} aria-hidden="true" />
-              Read the Overview
+            <a href="#how-it-works" className="btn-secondary text-base group">
+              See How It Works
+              <ArrowRight size={18} aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </motion.div>
         </div>
@@ -192,7 +197,7 @@ export default function Hero() {
         }}
       >
         <div className="container-narrow">
-          <dl className="grid grid-cols-2 lg:grid-cols-4" style={{ borderLeft: "none" }}>
+          <dl className="grid grid-cols-2 lg:grid-cols-4">
             {metrics.map((m, i) => (
               <motion.div
                 key={m.label}
@@ -203,7 +208,7 @@ export default function Hero() {
                 style={{ borderRight: "1px solid var(--border)" }}
               >
                 <dt className="text-xs text-pewter uppercase tracking-widest mb-1">{m.label}</dt>
-                <dd className="text-2xl md:text-3xl font-black text-snow font-mono">{m.value}</dd>
+                <dd className="text-2xl md:text-3xl font-black font-mono text-gold-warm">{m.value}</dd>
                 <dd className="text-xs text-pewter mt-1">{m.sub}</dd>
               </motion.div>
             ))}

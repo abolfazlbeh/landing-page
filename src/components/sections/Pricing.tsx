@@ -39,7 +39,7 @@ const competitors = [
     highlight: false,
   },
   {
-    name: "DeMere (BNB)",
+    name: "PayPax (BNB)",
     fee: "0.75%",
     settlement: "Seconds",
     custody: "Non-custodial",
@@ -50,7 +50,7 @@ const competitors = [
     highlight: true,
   },
   {
-    name: "DeMere (Base/Polygon)",
+    name: "PayPax (Base/Polygon)",
     fee: "0.2%",
     settlement: "Seconds",
     custody: "Non-custodial",
@@ -81,8 +81,8 @@ export default function Pricing() {
   const [volume, setVolume] = useState(10000);
 
   const coinbaseMonthly = volume * 0.01;
-  const demereMonthly = volume * 0.002; // Base/Polygon rate
-  const savings = coinbaseMonthly - demereMonthly;
+  const paypaxMonthly = volume * 0.002; // Base/Polygon rate
+  const savings = coinbaseMonthly - paypaxMonthly;
 
   return (
     <section
@@ -267,10 +267,10 @@ export default function Pricing() {
               </div>
               <div className="bg-teal-bright/5 border border-teal-bright/20 rounded-lg p-4 text-center">
                 <p className="text-xs text-teal-bright uppercase tracking-widest mb-2">
-                  DeMere (Base/Polygon)
+                  PayPax (Base/Polygon)
                 </p>
                 <p className="text-2xl font-black font-mono text-teal-bright">
-                  ${demereMonthly.toLocaleString()}
+                  ${paypaxMonthly.toLocaleString()}
                 </p>
                 <p className="text-xs text-pewter mt-1">per month in fees</p>
               </div>
@@ -282,7 +282,7 @@ export default function Pricing() {
                   <span className="text-xl font-black font-mono">
                     ${savings.toLocaleString()}
                   </span>{" "}
-                  per month with DeMere
+                  per month with PayPax
                 </p>
               </div>
             )}
@@ -292,7 +292,7 @@ export default function Pricing() {
         <AnimateOnScroll delay={0.25}>
           <p className="text-center text-xs text-pewter mt-8 max-w-xl mx-auto">
             Fee is capped at $100 max per transaction. Non-custodial means your
-            funds are never held by DeMere or any third party — ever.
+            funds are never held by PayPax or any third party — ever.
           </p>
         </AnimateOnScroll>
       </div>

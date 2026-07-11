@@ -68,7 +68,7 @@ export default function ForDevelopers() {
             </AnimateOnScroll>
             <AnimateOnScroll delay={0.15}>
               <p className="text-silver-mist leading-relaxed mb-8">
-                DeMere is powered by the WPGP open protocol. Any wallet, any
+                PayPax is powered by the WPGP open protocol. Any wallet, any
                 frontend, any backend can integrate. No API keys. No approval
                 process. The smart contract is the standard.
               </p>
@@ -100,11 +100,11 @@ export default function ForDevelopers() {
 
             <AnimateOnScroll delay={0.4}>
               <div className="flex flex-wrap gap-4">
-                <a href="https://docs.demere.io" className="btn-primary text-sm" target="_blank" rel="noopener noreferrer">
+                <a href="https://docs.paypax.xyz" className="btn-primary text-sm" target="_blank" rel="noopener noreferrer">
                   View Documentation
                   <ExternalLink size={14} aria-hidden="true" />
                 </a>
-                <a href="https://github.com/wpgp" className="btn-secondary text-sm" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/paypax" className="btn-secondary text-sm" target="_blank" rel="noopener noreferrer">
                   <ExternalLink size={16} aria-hidden="true" />
                   GitHub
                 </a>
