@@ -1,7 +1,6 @@
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import HeroPersonal from "@/components/sections/HeroPersonal";
-import HowItWorksPersonal from "@/components/sections/HowItWorksPersonal";
 
 export const metadata = {
   title: "PayPax Wallet — Pay Anywhere. Zero Gas. Full Custody.",
@@ -15,7 +14,11 @@ export default function PersonalPage() {
       <Navigation />
       <main id="main-content">
         <HeroPersonal />
-        <HowItWorksPersonal />
+        {/* Act 2 — DayInLifeReel          → coming next */}
+        {/* Act 3 — TapToPay               → coming next */}
+        {/* Act 4 — StatementBreak         → coming next */}
+        {/* Act 5 — PersonalFeatures       → coming next */}
+        {/* Act 6 — PersonalClose          → coming next */}
       </main>
       <Footer />
     </>
