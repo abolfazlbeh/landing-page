@@ -4,6 +4,7 @@ import HeroAndReel from "@/components/sections/HeroAndReel";
 import TapToPay from "@/components/sections/TapToPay";
 import StatementBreak from "@/components/sections/StatementBreak";
 import PersonalFeaturesBento from "@/components/sections/PersonalFeaturesBento";
+import PersonalClose from "@/components/sections/PersonalClose";
 
 export const metadata = {
   title: "PayPax Wallet — Pay Anywhere. Zero Gas. Full Custody.",
@@ -24,7 +25,8 @@ export default function PersonalPage() {
         <StatementBreak />
         {/* Act 5 — felt-benefit feature bento grid */}
         <PersonalFeaturesBento />
-        {/* Act 6 — PersonalClose → coming next */}
+        {/* Act 6 — emotional close + counters + CTAs */}
+        <PersonalClose />
       </main>
       <Footer />
     </>
