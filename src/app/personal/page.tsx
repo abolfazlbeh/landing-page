@@ -2,6 +2,7 @@ import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import HeroAndReel from "@/components/sections/HeroAndReel";
 import TapToPay from "@/components/sections/TapToPay";
+import StatementBreak from "@/components/sections/StatementBreak";
 
 export const metadata = {
   title: "PayPax Wallet — Pay Anywhere. Zero Gas. Full Custody.",
@@ -18,7 +19,8 @@ export default function PersonalPage() {
         <HeroAndReel />
         {/* Act 3 — scroll-scrubbed payment moment */}
         <TapToPay />
-        {/* Act 4 — StatementBreak   → coming next */}
+        {/* Act 4 — cinematic statement break */}
+        <StatementBreak />
         {/* Act 5 — PersonalFeatures → coming next */}
         {/* Act 6 — PersonalClose    → coming next */}
       </main>
