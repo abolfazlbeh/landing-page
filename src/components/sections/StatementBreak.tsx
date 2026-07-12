@@ -79,6 +79,7 @@ export default function StatementBreak() {
     <section
       ref={sectionRef}
       id="statement"
+      data-theme="dark"
       className="relative overflow-hidden"
       style={{ minHeight: "85vh" }}
       aria-labelledby="statement-heading"
@@ -145,7 +146,7 @@ export default function StatementBreak() {
           Money should move{" "}
           <br className="hidden md:block" />
           as freely{" "}
-          <span className="text-gradient-gold">as you do.</span>
+          <span style={{ color: "var(--gold)" }}>as you do.</span>
         </h2>
 
         <p

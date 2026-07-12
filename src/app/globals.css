@@ -55,6 +55,20 @@
   /* Card hover shadow */
   --shadow-card:    0 8px 32px rgba(6,182,212,0.14);
   --shadow-glow:    0 0 40px rgba(6,182,212,0.20);
+
+  /* Bento card per-card backgrounds (dark mode) */
+  --bento-gas-bg:      linear-gradient(135deg, #061510 0%, #0A1E14 60%, #071209 100%);
+  --bento-gas-border:  rgba(52,211,153,0.12);
+  --bento-custody-bg:  linear-gradient(160deg, #0C0C10 0%, #060608 100%);
+  --bento-chain-bg:    linear-gradient(145deg, #060A1A 0%, #080D20 100%);
+  --bento-chain-border: rgba(99,130,220,0.14);
+  --bento-tap-bg:      linear-gradient(145deg, #180810 0%, #200A14 100%);
+  --bento-tap-border:  rgba(236,72,153,0.12);
+  --bento-rewards-bg:  linear-gradient(145deg, #1A1000 0%, #140C00 50%, #0F0800 100%);
+  --bento-open-bg:     linear-gradient(100deg, #0D0814 0%, #100A18 50%, #0A0610 100%);
+  --bento-open-border: rgba(140,100,220,0.14);
+  --bento-text-body:   rgba(255,255,255,0.45);
+  --bento-text-small:  rgba(255,255,255,0.40);
 }
 
 [data-theme="light"] {
@@ -98,6 +112,20 @@
 
   /* Nav */
   --nav-bg:         rgba(248,250,252,0.90);
+
+  /* Bento card per-card backgrounds (light mode) */
+  --bento-gas-bg:      linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 60%, #F0FDF4 100%);
+  --bento-gas-border:  rgba(16,185,129,0.20);
+  --bento-custody-bg:  linear-gradient(160deg, #F8FAFC 0%, #F1F5F9 100%);
+  --bento-chain-bg:    linear-gradient(145deg, #EFF6FF 0%, #DBEAFE 100%);
+  --bento-chain-border: rgba(59,130,246,0.18);
+  --bento-tap-bg:      linear-gradient(145deg, #FDF2F8 0%, #FCE7F3 100%);
+  --bento-tap-border:  rgba(236,72,153,0.18);
+  --bento-rewards-bg:  linear-gradient(145deg, #FFFBEB 0%, #FEF3C7 50%, #FFF7ED 100%);
+  --bento-open-bg:     linear-gradient(100deg, #F5F3FF 0%, #EDE9FE 50%, #F3F0FF 100%);
+  --bento-open-border: rgba(109,40,217,0.16);
+  --bento-text-body:   rgba(15,23,42,0.55);
+  --bento-text-small:  rgba(15,23,42,0.45);
 
   /* Shadows */
   --shadow-card:    0 4px 24px rgba(15,23,42,0.08);

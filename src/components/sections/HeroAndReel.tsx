@@ -182,7 +182,8 @@ export default function HeroAndReel() {
           <div className="relative z-10 flex flex-col items-center pt-[88px]">
             <div className="mb-10"><HeroToggle /></div>
             <h1 className="font-black text-snow tracking-tight max-w-3xl" style={{ fontSize: "clamp(44px,7vw,96px)", lineHeight: 1.1 }}>
-              Pay anywhere. <span className="text-gradient-gold">Feel nothing.</span>
+              Pay anywhere.{" "}
+              <span style={{ color: "var(--gold)" }}>Feel nothing.</span>
             </h1>
             <a href="#" className="btn-premium text-base mt-10">
               <Download size={17} aria-hidden="true" />
@@ -190,7 +191,7 @@ export default function HeroAndReel() {
             </a>
           </div>
         </div>
-        <div className="container-narrow py-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div data-theme="dark" className="container-narrow py-16 grid grid-cols-1 md:grid-cols-2 gap-6">
           {SLIDES.map((s) => (
             <div key={s.id} className="relative rounded-2xl overflow-hidden min-h-[260px] flex items-end p-8"
               style={{ background: s.bg, border: "1px solid var(--border)" }}>
@@ -217,7 +218,8 @@ export default function HeroAndReel() {
       style={{ height: `${TOTAL_VH}vh` }}
       aria-label="Hero — Personal"
     >
-      <div className="sticky top-0 h-screen overflow-hidden"
+      <div
+        className="sticky top-0 h-screen overflow-hidden"
         style={{ backgroundColor: "var(--bg-primary)" }}>
 
         {/* Gold glow — behind everything */}
@@ -234,6 +236,7 @@ export default function HeroAndReel() {
         ────────────────────────────────────────────────────── */}
         <div
           ref={cardRef}
+          data-theme="dark"
           className="absolute will-change-transform overflow-hidden"
           style={{
             width:           `${CARD_W}px`,
@@ -274,7 +277,7 @@ export default function HeroAndReel() {
         </div>
 
         {/* ── Slide text  (z: 20, outside scaled card) ─────────── */}
-        <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 20 }} aria-hidden="true">
+        <div data-theme="dark" className="absolute inset-0 pointer-events-none" style={{ zIndex: 20 }} aria-hidden="true">
           {SLIDES.map((slide, i) => (
             <div
               key={slide.id}

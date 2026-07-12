@@ -196,8 +196,8 @@ export default function TapToPay() {
       <section id="tap-to-pay" className="section-padding" aria-label="How paying works">
         <div className="container-narrow">
           <p className="section-label" style={{ color: "var(--gold)" }}>The payment</p>
-          <h2 className="text-3xl md:text-5xl font-black text-snow mb-16 leading-tight">
-            Scan. Tap. <span className="text-gradient-gold">Rewarded.</span>
+          <h2 className="text-3xl md:text-5xl font-black text-theme-primary mb-16 leading-tight">
+            Scan. Tap. <span style={{ color: "var(--gold)" }}>Rewarded.</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
@@ -214,14 +214,14 @@ export default function TapToPay() {
                     style={{ background: "rgba(var(--gold-rgb),0.12)", border: "1px solid rgba(var(--gold-rgb),0.25)" }}>
                     <span className="text-gold-warm font-black text-sm">{f.n}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-snow mb-2">{f.title}</h3>
+                  <h3 className="text-lg font-semibold text-theme-primary mb-2">{f.title}</h3>
                   <p className="text-silver-mist text-sm leading-relaxed">{f.body}</p>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-center text-xl font-black text-snow mt-16">
-            That&apos;s it. <span className="text-gradient-gold">You just paid.</span>
+          <p className="text-center text-xl font-black text-theme-primary mt-16">
+            That&apos;s it. <span style={{ color: "var(--gold)" }}>You just paid.</span>
           </p>
         </div>
       </section>
@@ -255,7 +255,7 @@ export default function TapToPay() {
             style={{
               background:    "var(--bg-elevated)",
               border:        "1px solid rgba(var(--gold-rgb),0.20)",
-              boxShadow:     "0 32px 80px rgba(0,0,0,0.60), inset 0 0 0 1px rgba(var(--gold-rgb),0.08)",
+              boxShadow:     "0 32px 80px rgba(0,0,0,0.18), inset 0 0 0 1px rgba(var(--gold-rgb),0.08)",
               paddingBottom: "calc(100% * 17 / 9)",
             }}
           >
@@ -263,7 +263,7 @@ export default function TapToPay() {
             <div
               ref={qrScreenRef}
               className="absolute inset-3 rounded-[1.6rem] overflow-hidden flex flex-col items-center justify-center gap-4 px-6"
-              style={{ background: "linear-gradient(160deg, #080D0F, #050A0C)", opacity: 0 }}
+              style={{ background: "var(--bg-tertiary)", opacity: 0 }}
             >
               <p className="text-pewter text-[10px] uppercase tracking-widest">Scan to pay</p>
 
@@ -315,15 +315,15 @@ export default function TapToPay() {
             <div
               ref={screenRef}
               className="absolute inset-3 rounded-[1.6rem] overflow-hidden flex flex-col items-center justify-center gap-3 px-5"
-              style={{ background: "linear-gradient(160deg, #0D1520, #080F1A)", opacity: 0 }}
+              style={{ background: "var(--bg-tertiary)", opacity: 0 }}
             >
               <div className="text-center">
                 <p className="text-pewter text-[10px] uppercase tracking-widest mb-1">Payment to</p>
-                <p className="text-snow font-bold text-sm">Café Noma</p>
+                <p className="text-theme-primary font-bold text-sm">Café Noma</p>
               </div>
               <div className="rounded-xl px-5 py-3 text-center"
                 style={{ background: "rgba(var(--gold-rgb),0.10)", border: "1px solid rgba(var(--gold-rgb),0.20)" }}>
-                <p className="text-2xl font-black font-mono text-snow">$24.50</p>
+                <p className="text-2xl font-black font-mono text-theme-primary">$24.50</p>
                 <p className="text-[10px] text-pewter mt-0.5">USDC · BNB Chain</p>
               </div>
               <div className="w-full text-center text-xs font-bold py-2.5 rounded-xl text-abyss"
@@ -412,7 +412,7 @@ export default function TapToPay() {
           aria-hidden="true"
         >
           <p className="text-pewter text-[10px] uppercase tracking-widest mb-1">Payment confirmed</p>
-          <p className="text-snow font-black font-mono text-2xl">$24.50</p>
+          <p className="text-theme-primary font-black font-mono text-2xl">$24.50</p>
           <p className="text-mint text-xs mt-1">✓ Settled · 3s · BNB Chain</p>
         </div>
 
@@ -435,10 +435,10 @@ export default function TapToPay() {
           Scroll to pay.
         </p>
         <p ref={exitRef}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 font-black text-snow text-xl md:text-3xl tracking-tight pointer-events-none whitespace-nowrap"
-          style={{ zIndex: 8, opacity: 0 }} aria-hidden="true">
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 font-black text-xl md:text-3xl tracking-tight pointer-events-none whitespace-nowrap"
+          style={{ zIndex: 8, opacity: 0, color: "var(--text-primary)" }} aria-hidden="true">
           That&apos;s it.{" "}
-          <span className="text-gradient-gold">You just paid.</span>
+          <span style={{ color: "var(--gold)" }}>You just paid.</span>
         </p>
 
       </div>
