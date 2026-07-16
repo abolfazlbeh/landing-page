@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 
 const GOLD = "#D4A853";
 
@@ -221,7 +220,7 @@ export default function ImpactCarousel() {
         </div>
 
         {/* Card track */}
-        <div className="absolute inset-0 flex items-center" style={{ paddingTop: "150px" }}>
+        <div className="absolute inset-0 flex items-center" style={{ paddingTop: "120px" }}>
           <div
             ref={trackRef}
             style={{ display: "flex", width: `${N * 100}vw`, willChange: "transform" }}
@@ -248,8 +247,8 @@ export default function ImpactCarousel() {
                     ref={(el) => { cardRefs.current[0] = el; }}
                     style={{
                       position: "relative",
-                      width: "min(900px, 90vw)",
-                      height: "min(calc(100vh - 190px), 580px)",
+                      width: "min(1100px, 92vw)",
+                      height: "min(calc(100vh - 160px), 720px)",
                     }}
                     aria-label={slide.headline}
                   >
@@ -268,10 +267,10 @@ export default function ImpactCarousel() {
                     >
                       {/* Photo */}
                       <div className="absolute inset-0">
-                        <PhotoPlaceholder
-                          hint={slide.photoHint}
-                          className="w-full h-full !rounded-none"
-                          aspectRatio="aspect-auto"
+                        <img
+                          src="/images/business/impact-1.webp"
+                          alt={slide.headline}
+                          className="w-full h-full object-cover"
                         />
                       </div>
 
@@ -367,18 +366,18 @@ export default function ImpactCarousel() {
                     aria-label={slide.headline}
                     style={{
                       position: "relative",
-                      width: "min(900px, 90vw)",
-                      height: "min(calc(100vh - 190px), 580px)",
+                      width: "min(1100px, 92vw)",
+                      height: "min(calc(100vh - 160px), 720px)",
                       overflow: "hidden",
                       borderRadius: 16,
                       flexShrink: 0,
                     }}
                   >
                     <div className="absolute inset-0">
-                      <PhotoPlaceholder
-                        hint={slide.photoHint}
-                        className="w-full h-full !rounded-none"
-                        aspectRatio="aspect-auto"
+                      <img
+                        src={`/images/business/impact-${i + 1}.webp`}
+                        alt={slide.headline}
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <div

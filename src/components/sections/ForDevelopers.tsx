@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { ExternalLink, Terminal } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import TypewriterCode from "@/components/ui/TypewriterCode";
 
 const integrationPaths = [
@@ -137,11 +137,15 @@ export default function ForDevelopers() {
             {/* Developer photo below the code */}
             <AnimateOnScroll delay={0.35}>
               <div className="relative">
-                <PhotoPlaceholder
-                  hint="Developer working at a laptop — close-up of hands on keyboard, or dual-monitor setup showing code. Dark, ambient, tech atmosphere. Wide landscape. Recommended: 640×280px WebP."
-                  className="w-full"
-                  aspectRatio="aspect-[16/7]"
-                />
+                <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-[var(--border)]">
+                  <Image
+                    src="/images/business/developer.webp"
+                    alt="Developer working at a laptop with code on screen"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
                 <div className="absolute top-4 right-4 chip-overlay text-teal-bright text-xs font-bold px-3 py-1.5 rounded-full">
                   No API keys needed
                 </div>

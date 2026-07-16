@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, FileText } from "lucide-react";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import HeroToggle from "@/components/ui/HeroToggle";
 
 const metrics = [
@@ -37,11 +37,16 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
           className="absolute top-0 right-0"
         >
-          <PhotoPlaceholder
-            hint="A merchant (shop owner / café owner) smiling behind a counter, warm natural lighting, candid feel. Portrait orientation. Recommended: 400×530px WebP."
-            className="w-[210px] shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
-            aspectRatio="aspect-[3/4]"
-          />
+          <div className="relative w-[210px] aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.5)] border border-[var(--border)]">
+            <Image
+              src="/images/business/merchant.webp"
+              alt="A café owner smiling behind their counter"
+              fill
+              sizes="210px"
+              className="object-cover"
+              priority
+            />
+          </div>
           <div className="absolute -bottom-4 -left-6 bg-teal-bright text-abyss text-xs font-bold px-3 py-1.5 rounded-full shadow-glow-teal whitespace-nowrap">
             ✓ Settled in 3s
           </div>
@@ -54,11 +59,15 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
           className="absolute top-24 right-52"
         >
-          <PhotoPlaceholder
-            hint="Customer holding a smartphone scanning a QR code to pay — close-up of hands + phone screen. Square crop. Recommended: 200×200px WebP."
-            className="w-[150px] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"
-            aspectRatio="aspect-square"
-          />
+          <div className="relative w-[150px] aspect-square rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.4)] border border-[var(--border)]">
+            <Image
+              src="/images/business/scan-qr.webp"
+              alt="Customer scanning a QR code with a smartphone to pay"
+              fill
+              sizes="150px"
+              className="object-cover"
+            />
+          </div>
           <div className="absolute -top-3 -right-3 chip-overlay text-teal-bright text-[10px] font-bold px-2 py-1 rounded-lg shadow-lg">
             WPGP
           </div>
