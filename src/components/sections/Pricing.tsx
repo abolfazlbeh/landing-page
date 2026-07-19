@@ -39,8 +39,8 @@ const competitors = [
     highlight: false,
   },
   {
-    name: "PayPax (BNB)",
-    fee: "0.75%",
+    name: "PayPax (Base)",
+    fee: "0.30%",
     settlement: "Seconds",
     custody: "Non-custodial",
     hiddenFees: "None",
@@ -50,8 +50,8 @@ const competitors = [
     highlight: true,
   },
   {
-    name: "PayPax (Base/Polygon)",
-    fee: "0.2%",
+    name: "PayPax (BNB Chain)",
+    fee: "0.75%",
     settlement: "Seconds",
     custody: "Non-custodial",
     hiddenFees: "None",
@@ -81,7 +81,7 @@ export default function Pricing() {
   const [volume, setVolume] = useState(10000);
 
   const coinbaseMonthly = volume * 0.01;
-  const paypaxMonthly = volume * 0.002; // Base/Polygon rate
+  const paypaxMonthly = volume * 0.003; // Base rate 0.30%
   const savings = coinbaseMonthly - paypaxMonthly;
 
   return (
@@ -267,7 +267,7 @@ export default function Pricing() {
               </div>
               <div className="bg-teal-bright/5 border border-teal-bright/20 rounded-lg p-4 text-center">
                 <p className="text-xs text-teal-bright uppercase tracking-widest mb-2">
-                  PayPax (Base/Polygon)
+                  PayPax (Base)
                 </p>
                 <p className="text-2xl font-black font-mono text-teal-bright">
                   ${paypaxMonthly.toLocaleString()}

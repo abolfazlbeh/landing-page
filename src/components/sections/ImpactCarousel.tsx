@@ -18,8 +18,8 @@ const SLIDES = [
   {
     id: 2,
     headline: "Fees that don't eat your business.",
-    subline: "0.75% and nothing else. Every dollar saved stays with you.",
-    stat: "0.75%",
+    subline: "0.30% and nothing else. Every dollar saved stays with you.",
+    stat: "0.30%",
     statLabel: "total fee",
     tag: "Keep more",
     accent: "#22D3EE",
@@ -48,7 +48,7 @@ const SLIDES = [
   {
     id: 5,
     headline: "Every sale. Every time. Instant.",
-    subline: "100% settlement rate across BNB, Base and Polygon. The contract never fails.",
+    subline: "100% settlement rate on Base. The contract never fails.",
     stat: "100%",
     statLabel: "settlement rate",
     tag: "Reliable",

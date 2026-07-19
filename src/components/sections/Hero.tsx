@@ -6,8 +6,8 @@ import { ArrowRight, FileText } from "lucide-react";
 import HeroToggle from "@/components/ui/HeroToggle";
 
 const metrics = [
-  { label: "Platform Fee", value: "0.75%", sub: "BNB Chain" },
-  { label: "Settlement", value: "< 5s", sub: "All chains" },
+  { label: "Platform Fee", value: "0.30%", sub: "Base" },
+  { label: "Settlement", value: "< 2s", sub: "All chains" },
   { label: "Chargebacks", value: "Zero", sub: "Impossible by design" },
   { label: "Chains", value: "3", sub: "V2 launch" },
 ];

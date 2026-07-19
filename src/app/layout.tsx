@@ -6,7 +6,7 @@ import ThemeProvider from "@/components/ui/ThemeProvider";
 export const metadata: Metadata = {
   title: "PayPax — Accept Crypto Payments Directly. No Middlemen.",
   description:
-    "PayPax is the open payment gateway for merchants. Accept stablecoins with fees under 1%, instant settlement, and no chargebacks. Powered by the WPGP protocol on BNB Chain, Base, and Polygon.",
+    "PayPax is the open payment gateway for merchants. Accept stablecoins with fees from 0.30%, instant settlement, and no chargebacks. Powered by the WPGP protocol on Base, BNB Chain, and Polygon.",
   keywords: [
     "crypto payment gateway",
     "accept crypto payments",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PayPax — The Open Payment Gateway",
     description:
-      "Accept crypto payments directly. 0.75% fees. Instant settlement. No middlemen. Powered by WPGP.",
+      "Accept crypto payments directly. From 0.30% fees. Instant settlement. No middlemen. Powered by WPGP.",
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PayPax" }],
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PayPax — The Open Payment Gateway",
     description:
-      "Accept crypto payments directly. 0.75% fees. Instant settlement. No middlemen. Powered by WPGP.",
+      "Accept crypto payments directly. From 0.30% fees. Instant settlement. No middlemen. Powered by WPGP.",
     images: ["/og-image.png"],
   },
   icons: {

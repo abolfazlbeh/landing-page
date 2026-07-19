@@ -324,7 +324,7 @@ export default function TapToPay() {
               <div className="rounded-xl px-5 py-3 text-center"
                 style={{ background: "rgba(var(--gold-rgb),0.10)", border: "1px solid rgba(var(--gold-rgb),0.20)" }}>
                 <p className="text-2xl font-black font-mono text-theme-primary">$24.50</p>
-                <p className="text-[10px] text-pewter mt-0.5">USDC · BNB Chain</p>
+                <p className="text-[10px] text-pewter mt-0.5">USDC · Base</p>
               </div>
               <div className="w-full text-center text-xs font-bold py-2.5 rounded-xl text-abyss"
                 style={{ background: "linear-gradient(135deg, var(--gold), var(--gold-light))" }}>
@@ -413,7 +413,7 @@ export default function TapToPay() {
         >
           <p className="text-pewter text-[10px] uppercase tracking-widest mb-1">Payment confirmed</p>
           <p className="text-theme-primary font-black font-mono text-2xl">$24.50</p>
-          <p className="text-mint text-xs mt-1">✓ Settled · 3s · BNB Chain</p>
+          <p className="text-mint text-xs mt-1">✓ Settled · 2s · Base</p>
         </div>
 
         {/* ── WPGP reward chip ── */}

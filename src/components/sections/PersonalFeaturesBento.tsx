@@ -63,7 +63,7 @@ export default function PersonalFeaturesBento() {
                   Never pay<br />to pay.
                 </h3>
                 <p className="text-sm leading-relaxed max-w-sm" style={{ color: "var(--bento-text-body)" }}>
-                  Gas fees are covered by PayPax. You only need USDC or USDT — no BNB, no ETH, no second coin sitting in your wallet just in case.
+                  Gas fees are covered by PayPax. You only need USDC or USDT — no ETH for gas, no second coin sitting in your wallet just in case.
                 </p>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function PersonalFeaturesBento() {
                 <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#4F6DC8" }}>Multi-chain</span>
                 <h3 className="text-3xl font-black text-snow leading-tight">One wallet,<br />every chain.</h3>
                 <p className="text-sm leading-relaxed max-w-[200px]" style={{ color: "var(--bento-text-body)" }}>
-                  BNB Chain, Base, Polygon. Same wallet, same experience.
+                  Base, BNB Chain, Polygon. Same wallet, same experience.
                 </p>
               </div>
             </div>

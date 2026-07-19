@@ -28,7 +28,7 @@ const FEATURES = [
     number: "01",
     icon:   Fuel,
     title:  "Never pay to pay.",
-    body:   "Gas fees are covered by PayPax. You only need USDC or USDT — no BNB, no ETH, no second coin sitting in your wallet just in case.",
+    body:   "Gas fees are covered by PayPax. You only need USDC or USDT — no ETH for gas, no second coin sitting in your wallet just in case.",
     tag:    "Zero gas",
   },
   {
@@ -42,7 +42,7 @@ const FEATURES = [
     number: "03",
     icon:   Globe,
     title:  "One wallet, every chain.",
-    body:   "BNB Chain, Base, Polygon — the same wallet, the same experience. You never think about which chain you're on. It just works.",
+    body:   "Base, BNB Chain, Polygon — the same wallet, the same experience. You never think about which chain you're on. It just works.",
     tag:    "Multi-chain",
   },
   {
