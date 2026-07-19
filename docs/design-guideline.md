@@ -1,24 +1,24 @@
-# DeMere Landing Page — Design Guideline & Content Strategy
+# PayPax Landing Page — Design Guideline & Content Strategy
 
 > **Project:** demere-landing
-> **Brand:** DeMere
+> **Brand:** PayPax
 > **Protocol:** WPGP (Web3 Payment Gateway Protocol)
-> **Purpose:** Marketing landing page for DeMere — the company behind WPGP
-> **Target Audience:** Merchants, business owners, developers, wallet providers, and investors evaluating DeMere's payment infrastructure
+> **Purpose:** Marketing landing page for PayPax — the company behind WPGP
+> **Target Audience:** Merchants, business owners, developers, wallet providers, and investors evaluating PayPax's payment infrastructure
 > **Date:** June 2026
 
 ---
 
 ## 1. Design Philosophy
 
-### Brand Identity: DeMere
+### Brand Identity: PayPax
 
-**DeMere** is the brand and company name. **WPGP** is the underlying protocol. The landing page leads with the DeMere brand — it's what merchants remember, what developers search for, and what the business is built around. WPGP is referenced as the protocol powering DeMere's infrastructure.
+**PayPax** is the brand and company name. **WPGP** is the underlying protocol. The landing page leads with the PayPax brand — it's what merchants remember, what developers search for, and what the business is built around. WPGP is referenced as the protocol powering PayPax's infrastructure.
 
 **Naming Convention:**
-- **DeMere** — The brand, company, product. Used in headlines, CTAs, navigation, logo.
+- **PayPax** — The brand, company, product. Used in headlines, CTAs, navigation, logo.
 - **WPGP** — The open protocol. Referenced in technical sections, documentation links, developer content.
-- Example: "DeMere lets you accept crypto payments. Powered by the WPGP open protocol."
+- Example: "PayPax lets you accept crypto payments. Powered by the WPGP open protocol."
 
 ### Core Principles
 
@@ -29,7 +29,7 @@ Inspired by Phantom, ctrl.xyz, and 0.xyz — we lead with clarity, not noise. Ev
 Inspired by Noomo Labs and Chromia — subtle animations guide the eye, reveal content progressively, and create a sense of technological sophistication. No gratuitous particle effects. Every animation communicates something.
 
 **Dark-First, Light-Accented.**
-Deep backgrounds with high-contrast text and vibrant accent gradients. This positions DeMere as modern, premium, and crypto-native without feeling "hacker terminal."
+Deep backgrounds with high-contrast text and vibrant accent gradients. This positions PayPax as modern, premium, and crypto-native without feeling "hacker terminal."
 
 **Trust Through Transparency.**
 Numbers, comparisons, and on-chain verifiability are the core trust signals — not logos of partners we don't have yet. The protocol speaks for itself.
@@ -40,7 +40,7 @@ Numbers, comparisons, and on-chain verifiability are the core trust signals — 
 
 ### Color Palette — "Midnight Teal"
 
-A distinctive palette built around deep ocean tones and warm gold accents. This sets DeMere apart from the generic "blue crypto" aesthetic while conveying financial trust and technological depth.
+A distinctive palette built around deep ocean tones and warm gold accents. This sets PayPax apart from the generic "blue crypto" aesthetic while conveying financial trust and technological depth.
 
 | Role | Color | Hex | Usage |
 |------|-------|-----|-------|
@@ -75,7 +75,7 @@ A distinctive palette built around deep ocean tones and warm gold accents. This 
 ### Typography — Satoshi + General Sans
 
 **Primary Font: Satoshi** (Indian Type Foundry, open source)
-A modernist sans-serif that blends grotesk-style letterforms with geometric precision. It carries a distinctive personality while remaining highly legible — setting DeMere apart from the generic Inter/Outfit crowd.
+A modernist sans-serif that blends grotesk-style letterforms with geometric precision. It carries a distinctive personality while remaining highly legible — setting PayPax apart from the generic Inter/Outfit crowd.
 
 **Secondary Font: General Sans** (for body text alternative if needed)
 Clean, modern, with slightly warmer character than Inter. Pairs well with Satoshi.
@@ -187,7 +187,7 @@ Base unit: **4px**. All spacing is multiples of 4.
 ### Navigation
 
 - Fixed top, transparent on hero, blur background on scroll
-- DeMere logo left, nav links center (desktop), CTA right
+- PayPax logo left, nav links center (desktop), CTA right
 - Mobile: hamburger menu with full-screen overlay
 - Active link: accent teal color underline
 - Height: `72px` (desktop), `64px` (mobile)
@@ -218,7 +218,7 @@ The landing page is a single-page scrolling experience with distinct sections. E
 
 ### Section 1: Hero
 
-**Job:** Immediately communicate what DeMere is and why it matters. Capture attention in 3 seconds.
+**Job:** Immediately communicate what PayPax is and why it matters. Capture attention in 3 seconds.
 
 **Layout:** Full viewport height. Centered content. Subtle animated background (geometric mesh or flowing teal particles — very faint).
 
@@ -226,7 +226,7 @@ The landing page is a single-page scrolling experience with distinct sections. E
 
 - **Tagline (above heading, muted, accent color):** `Powered by the WPGP Open Protocol`
 - **Headline:** `Accept Crypto Payments. No Middlemen. No Delays.`
-- **Subheadline:** `DeMere is the payment gateway where every transaction settles directly between customer wallet and merchant wallet — in seconds, with fees under 1%.`
+- **Subheadline:** `PayPax is the payment gateway where every transaction settles directly between customer wallet and merchant wallet — in seconds, with fees under 1%.`
 - **Primary CTA:** `Start Accepting Payments` → docs / integration guide
 - **Secondary CTA:** `Read the Overview` → business overview doc
 - **Visual:** Abstract 3D illustration or animated diagram showing wallet → smart contract → merchant flow (simplified, teal-toned)
@@ -302,7 +302,7 @@ The landing page is a single-page scrolling experience with distinct sections. E
 
 **Comparison Table:**
 
-| | Coinbase Commerce | BitPay | NOWPayments | DeMere (BNB) | DeMere (Base/Polygon) |
+| | Coinbase Commerce | BitPay | NOWPayments | PayPax (BNB) | PayPax (Base/Polygon) |
 |---|---|---|---|---|---|
 | Fee | 1% | 1% | 0.5% | 0.75% | 0.2% |
 | Settlement | Minutes–Hours | 1 day | Minutes | Seconds | Seconds |
@@ -314,10 +314,10 @@ The landing page is a single-page scrolling experience with distinct sections. E
 
 **Fee Calculator (Interactive):**
 - Slider: "Monthly payment volume: $____"
-- Output: "You'd save $____ per month vs existing crypto gateways with DeMere"
-- Shows: Coinbase Commerce cost vs DeMere cost side by side
+- Output: "You'd save $____ per month vs existing crypto gateways with PayPax"
+- Shows: Coinbase Commerce cost vs PayPax cost side by side
 
-**Bottom note:** `Fee is capped at $100 max per transaction. Non-custodial means your funds are never held by DeMere or any third party — ever.`
+**Bottom note:** `Fee is capped at $100 max per transaction. Non-custodial means your funds are never held by PayPax or any third party — ever.`
 
 ---
 
@@ -364,7 +364,7 @@ The landing page is a single-page scrolling experience with distinct sections. E
 
 - **Section Label:** `For Developers`
 - **Headline:** `Open Protocol. Build Anything.`
-- **Body:** `DeMere is powered by the WPGP open protocol. Any wallet, any frontend, any backend can integrate. No API keys. No approval process. The smart contract is the standard.`
+- **Body:** `PayPax is powered by the WPGP open protocol. Any wallet, any frontend, any backend can integrate. No API keys. No approval process. The smart contract is the standard.`
 
 **Integration Paths:**
 - TypeScript SDK (`@wpgp/business-sdk`)
@@ -372,8 +372,8 @@ The landing page is a single-page scrolling experience with distinct sections. E
 - Deep link / QR code integration
 
 **CTAs:**
-- `View Documentation` → docs.demere.io
-- `GitHub` → github.com/wpgp
+- `View Documentation` → docs.paypax.xyz
+- `GitHub` → github.com/paypax
 
 **Visual:** Stylized code editor showing a simplified integration snippet (3-4 lines, illustrative — not meant to be copied directly from the landing page)
 
@@ -424,7 +424,7 @@ The landing page is a single-page scrolling experience with distinct sections. E
 
 ---
 
-### Section 9: DeMere Wallet
+### Section 9: PayPax Wallet
 
 **Job:** Introduce the consumer wallet that completes the ecosystem. Show it's real and usable.
 
@@ -432,18 +432,18 @@ The landing page is a single-page scrolling experience with distinct sections. E
 
 **Content:**
 
-- **Section Label:** `DeMere Wallet`
+- **Section Label:** `PayPax Wallet`
 - **Headline:** `The Wallet Your Customers Already Love`
-- **Body:** `DeMere Wallet is the non-custodial mobile wallet built for the WPGP payment experience. Customers pay merchants in seconds — no gas fees, no complexity, full custody of their funds.`
+- **Body:** `PayPax Wallet is the non-custodial mobile wallet built for the WPGP payment experience. Customers pay merchants in seconds — no gas fees, no complexity, full custody of their funds.`
 
 **Key Features:**
 
-1. **Gasless Payments** — `Pay with USDC or USDT without holding BNB or ETH. DeMere covers the gas.`
+1. **Gasless Payments** — `Pay with USDC or USDT without holding BNB or ETH. PayPax covers the gas.`
 2. **Non-Custodial** — `HD wallet with full self-custody. Your keys, your funds. Always.`
 3. **Multi-Chain** — `Works on BNB Chain, Base, and Polygon. One wallet, any merchant.`
 4. **QR & Deep Link** — `Scan a QR code at checkout, approve in one tap, done.`
 5. **Token Rewards** — `Earn WPGP tokens on every payment. Build value just by paying.`
-6. **Open Ecosystem** — `Any compatible wallet can pay DeMere merchants. DeMere Wallet is the best experience, but never the only option.`
+6. **Open Ecosystem** — `Any compatible wallet can pay PayPax merchants. PayPax Wallet is the best experience, but never the only option.`
 
 **CTAs:**
 - `Download for iOS` → App Store
@@ -451,7 +451,7 @@ The landing page is a single-page scrolling experience with distinct sections. E
 
 **Visual:** Phone mockup showing wallet UI with payment confirmation screen. Teal and gold accents.
 
-**Note:** Emphasize that DeMere Wallet is the reference implementation, but any ERC-4337 compatible wallet can pay DeMere merchants. The protocol is open.
+**Note:** Emphasize that PayPax Wallet is the reference implementation, but any ERC-4337 compatible wallet can pay PayPax merchants. The protocol is open.
 
 ---
 
@@ -466,15 +466,15 @@ The landing page is a single-page scrolling experience with distinct sections. E
 - **Headline:** `Ready to Accept Payments Without the Middlemen?`
 - **Subline:** `Join the protocol. Start in minutes.`
 - **Primary CTA:** `Get Started` → integration guide / docs
-- **Secondary CTA:** `Download DeMere Wallet` → wallet download page
+- **Secondary CTA:** `Download PayPax Wallet` → wallet download page
 
 **Footer:**
-- DeMere logo
-- Links: Docs | GitHub | Business Overview | DeMere Wallet
+- PayPax logo
+- Links: Docs | GitHub | Business Overview | PayPax Wallet
 - Social: Twitter/X | Discord | Telegram
 - Legal: Terms | Privacy
 - Protocol badge: `Powered by WPGP`
-- Copyright: `© 2026 DeMere`
+- Copyright: `© 2026 PayPax`
 
 ---
 
@@ -578,27 +578,27 @@ The landing page is a single-page scrolling experience with distinct sections. E
 ## 10. SEO & Meta Strategy
 
 ### Page Title
-`DeMere — Accept Crypto Payments Directly. No Middlemen.`
+`PayPax — Accept Crypto Payments Directly. No Middlemen.`
 
 ### Meta Description
-`DeMere is the open payment gateway for merchants. Accept stablecoins with fees under 1%, instant settlement, and no chargebacks. Powered by the WPGP protocol on BNB Chain, Base, and Polygon.`
+`PayPax is the open payment gateway for merchants. Accept stablecoins with fees under 1%, instant settlement, and no chargebacks. Powered by the WPGP protocol on BNB Chain, Base, and Polygon.`
 
 ### Open Graph
 
-- **og:title:** `DeMere — The Open Payment Gateway`
+- **og:title:** `PayPax — The Open Payment Gateway`
 - **og:description:** `Accept crypto payments directly. 0.75% fees. Instant settlement. No middlemen. Powered by WPGP.`
 - **og:image:** Hero visual or branded card (1200x630px)
 - **og:type:** `website`
 
 ### Target Keywords
 
-- Primary: `crypto payment gateway`, `accept crypto payments`, `DeMere payments`
+- Primary: `crypto payment gateway`, `accept crypto payments`, `PayPax payments`
 - Secondary: `stablecoin payments`, `merchant crypto`, `USDC payment gateway`, `WPGP protocol`
 - Long-tail: `accept crypto payments no chargebacks`, `low fee crypto gateway`, `instant settlement blockchain payments`
 
 ### Structured Data
 
-- Organization schema (DeMere)
+- Organization schema (PayPax)
 - SoftwareApplication schema (for the WPGP protocol)
 - FAQ schema (if FAQ section added)
 
@@ -620,8 +620,8 @@ The landing page is a single-page scrolling experience with distinct sections. E
 
 ### Logo
 
-- Primary: "DeMere" wordmark + icon mark
-- Tagline variant: "DeMere" with "Powered by WPGP" below (small, muted)
+- Primary: "PayPax" wordmark + icon mark
+- Tagline variant: "PayPax" with "Powered by WPGP" below (small, muted)
 - Icon only: For favicon, small displays
 - Light version: For dark backgrounds (primary use — teal accent on snow white)
 - Dark version: For light backgrounds (rare use)
@@ -656,7 +656,7 @@ The landing page is a single-page scrolling experience with distinct sections. E
 ```
 ┌─────────────────────────────────────────────────────┐
 │  NAVIGATION (fixed, transparent → blur)             │
-│  DeMere Logo | How It Works | Pricing | Docs | CTA │
+│  PayPax Logo | How It Works | Pricing | Docs | CTA │
 ├─────────────────────────────────────────────────────┤
 │                                                     │
 │  § HERO                                             │
@@ -700,7 +700,7 @@ The landing page is a single-page scrolling experience with distinct sections. E
 │                                                     │
 ├─────────────────────────────────────────────────────┤
 │                                                     │
-│  § DEMERE WALLET                                    │
+│  § PAYPAX WALLET                                    │
 │  Phone mockup + features + download CTAs            │
 │                                                     │
 ├─────────────────────────────────────────────────────┤
@@ -710,7 +710,7 @@ The landing page is a single-page scrolling experience with distinct sections. E
 │                                                     │
 ├─────────────────────────────────────────────────────┤
 │  FOOTER                                             │
-│  DeMere Logo | Links | Social | "Powered by WPGP"  │
+│  PayPax Logo | Links | Social | "Powered by WPGP"  │
 └─────────────────────────────────────────────────────┘
 ```
 

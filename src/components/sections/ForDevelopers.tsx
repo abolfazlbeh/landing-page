@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { ExternalLink, Terminal } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import TypewriterCode from "@/components/ui/TypewriterCode";
 
 const integrationPaths = [
@@ -68,7 +68,7 @@ export default function ForDevelopers() {
             </AnimateOnScroll>
             <AnimateOnScroll delay={0.15}>
               <p className="text-silver-mist leading-relaxed mb-8">
-                DeMere is powered by the WPGP open protocol. Any wallet, any
+                PayPax is powered by the WPGP open protocol. Any wallet, any
                 frontend, any backend can integrate. No API keys. No approval
                 process. The smart contract is the standard.
               </p>
@@ -100,11 +100,11 @@ export default function ForDevelopers() {
 
             <AnimateOnScroll delay={0.4}>
               <div className="flex flex-wrap gap-4">
-                <a href="https://docs.demere.io" className="btn-primary text-sm" target="_blank" rel="noopener noreferrer">
+                <a href="https://docs.paypax.xyz" className="btn-primary text-sm" target="_blank" rel="noopener noreferrer">
                   View Documentation
                   <ExternalLink size={14} aria-hidden="true" />
                 </a>
-                <a href="https://github.com/wpgp" className="btn-secondary text-sm" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/paypax" className="btn-secondary text-sm" target="_blank" rel="noopener noreferrer">
                   <ExternalLink size={16} aria-hidden="true" />
                   GitHub
                 </a>
@@ -137,11 +137,15 @@ export default function ForDevelopers() {
             {/* Developer photo below the code */}
             <AnimateOnScroll delay={0.35}>
               <div className="relative">
-                <PhotoPlaceholder
-                  hint="Developer working at a laptop — close-up of hands on keyboard, or dual-monitor setup showing code. Dark, ambient, tech atmosphere. Wide landscape. Recommended: 640×280px WebP."
-                  className="w-full"
-                  aspectRatio="aspect-[16/7]"
-                />
+                <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden border border-[var(--border)]">
+                  <Image
+                    src="/images/business/developer.webp"
+                    alt="Developer working at a laptop with code on screen"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
                 <div className="absolute top-4 right-4 chip-overlay text-teal-bright text-xs font-bold px-3 py-1.5 rounded-full">
                   No API keys needed
                 </div>

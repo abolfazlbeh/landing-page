@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, FileText } from "lucide-react";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
+import HeroToggle from "@/components/ui/HeroToggle";
 
 const metrics = [
-  { label: "Platform Fee", value: "0.75%", sub: "BNB Chain" },
-  { label: "Settlement", value: "< 5s", sub: "All chains" },
+  { label: "Platform Fee", value: "0.30%", sub: "Base" },
+  { label: "Settlement", value: "< 2s", sub: "All chains" },
   { label: "Chargebacks", value: "Zero", sub: "Impossible by design" },
   { label: "Chains", value: "3", sub: "V2 launch" },
 ];
@@ -36,11 +37,16 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
           className="absolute top-0 right-0"
         >
-          <PhotoPlaceholder
-            hint="A merchant (shop owner / café owner) smiling behind a counter, warm natural lighting, candid feel. Portrait orientation. Recommended: 400×530px WebP."
-            className="w-[210px] shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
-            aspectRatio="aspect-[3/4]"
-          />
+          <div className="relative w-[210px] aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.5)] border border-[var(--border)]">
+            <Image
+              src="/images/business/merchant.webp"
+              alt="A café owner smiling behind their counter"
+              fill
+              sizes="210px"
+              className="object-cover"
+              priority
+            />
+          </div>
           <div className="absolute -bottom-4 -left-6 bg-teal-bright text-abyss text-xs font-bold px-3 py-1.5 rounded-full shadow-glow-teal whitespace-nowrap">
             ✓ Settled in 3s
           </div>
@@ -53,11 +59,15 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
           className="absolute top-24 right-52"
         >
-          <PhotoPlaceholder
-            hint="Customer holding a smartphone scanning a QR code to pay — close-up of hands + phone screen. Square crop. Recommended: 200×200px WebP."
-            className="w-[150px] shadow-[0_16px_40px_rgba(0,0,0,0.4)]"
-            aspectRatio="aspect-square"
-          />
+          <div className="relative w-[150px] aspect-square rounded-2xl overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.4)] border border-[var(--border)]">
+            <Image
+              src="/images/business/scan-qr.webp"
+              alt="Customer scanning a QR code with a smartphone to pay"
+              fill
+              sizes="150px"
+              className="object-cover"
+            />
+          </div>
           <div className="absolute -top-3 -right-3 chip-overlay text-teal-bright text-[10px] font-bold px-2 py-1 rounded-lg shadow-lg">
             WPGP
           </div>
@@ -78,6 +88,16 @@ export default function Hero() {
       {/* ── MAIN CONTENT ── */}
       <div className="container-narrow relative z-10 pt-[96px] pb-0">
         <div className="max-w-5xl mx-auto lg:mx-0 text-center lg:text-left lg:max-w-[600px]">
+          {/* Audience toggle */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-6"
+          >
+            <HeroToggle />
+          </motion.div>
+
           {/* Protocol badge */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -145,7 +165,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 1.05, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-silver-mist leading-relaxed mb-10 max-w-lg"
           >
-            DeMere is the payment gateway where every transaction settles
+            PayPax is the payment gateway where every transaction settles
             directly between customer wallet and merchant wallet — in seconds,
             with fees under 1%.
           </motion.p>
@@ -157,7 +177,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mb-20"
           >
-            <a href="https://docs.demere.io" className="btn-primary text-base group">
+            <a href="https://docs.paypax.xyz" className="btn-primary text-base group">
               Start Accepting Payments
               <ArrowRight size={18} aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>

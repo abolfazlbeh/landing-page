@@ -27,7 +27,7 @@ export default function ThemeProvider({
 
   // On mount: read saved preference or system preference
   useEffect(() => {
-    const saved = localStorage.getItem("demere-theme") as Theme | null;
+    const saved = localStorage.getItem("paypax-theme") as Theme | null;
     if (saved === "light" || saved === "dark") {
       setTheme(saved);
     } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
@@ -38,7 +38,7 @@ export default function ThemeProvider({
   // Apply data-theme to <html> whenever theme changes
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("demere-theme", theme);
+    localStorage.setItem("paypax-theme", theme);
   }, [theme]);
 
   const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));

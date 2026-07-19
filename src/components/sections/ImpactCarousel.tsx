@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 
 const GOLD = "#D4A853";
 
@@ -19,8 +18,8 @@ const SLIDES = [
   {
     id: 2,
     headline: "Fees that don't eat your business.",
-    subline: "0.75% and nothing else. Every dollar saved stays with you.",
-    stat: "0.75%",
+    subline: "0.30% and nothing else. Every dollar saved stays with you.",
+    stat: "0.30%",
     statLabel: "total fee",
     tag: "Keep more",
     accent: "#22D3EE",
@@ -49,7 +48,7 @@ const SLIDES = [
   {
     id: 5,
     headline: "Every sale. Every time. Instant.",
-    subline: "100% settlement rate across BNB, Base and Polygon. The contract never fails.",
+    subline: "100% settlement rate on Base. The contract never fails.",
     stat: "100%",
     statLabel: "settlement rate",
     tag: "Reliable",
@@ -196,7 +195,7 @@ export default function ImpactCarousel() {
         >
           <p className="section-label">Real Impact</p>
           <h2 className="text-3xl md:text-4xl font-black" style={{ color: "var(--text-primary)" }}>
-            How DeMere changes{" "}
+            How PayPax changes{" "}
             <span className="text-gradient-teal">everyday life</span>
           </h2>
           <div className="flex items-center justify-center gap-2 mt-4" role="tablist">
@@ -221,7 +220,7 @@ export default function ImpactCarousel() {
         </div>
 
         {/* Card track */}
-        <div className="absolute inset-0 flex items-center" style={{ paddingTop: "150px" }}>
+        <div className="absolute inset-0 flex items-center" style={{ paddingTop: "120px" }}>
           <div
             ref={trackRef}
             style={{ display: "flex", width: `${N * 100}vw`, willChange: "transform" }}
@@ -248,8 +247,8 @@ export default function ImpactCarousel() {
                     ref={(el) => { cardRefs.current[0] = el; }}
                     style={{
                       position: "relative",
-                      width: "min(900px, 90vw)",
-                      height: "min(calc(100vh - 190px), 580px)",
+                      width: "min(1100px, 92vw)",
+                      height: "min(calc(100vh - 160px), 720px)",
                     }}
                     aria-label={slide.headline}
                   >
@@ -268,10 +267,10 @@ export default function ImpactCarousel() {
                     >
                       {/* Photo */}
                       <div className="absolute inset-0">
-                        <PhotoPlaceholder
-                          hint={slide.photoHint}
-                          className="w-full h-full !rounded-none"
-                          aspectRatio="aspect-auto"
+                        <img
+                          src="/images/business/impact-1.webp"
+                          alt={slide.headline}
+                          className="w-full h-full object-cover"
                         />
                       </div>
 
@@ -367,18 +366,18 @@ export default function ImpactCarousel() {
                     aria-label={slide.headline}
                     style={{
                       position: "relative",
-                      width: "min(900px, 90vw)",
-                      height: "min(calc(100vh - 190px), 580px)",
+                      width: "min(1100px, 92vw)",
+                      height: "min(calc(100vh - 160px), 720px)",
                       overflow: "hidden",
                       borderRadius: 16,
                       flexShrink: 0,
                     }}
                   >
                     <div className="absolute inset-0">
-                      <PhotoPlaceholder
-                        hint={slide.photoHint}
-                        className="w-full h-full !rounded-none"
-                        aspectRatio="aspect-auto"
+                      <img
+                        src={`/images/business/impact-${i + 1}.webp`}
+                        alt={slide.headline}
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <div

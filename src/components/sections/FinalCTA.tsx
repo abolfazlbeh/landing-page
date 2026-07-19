@@ -59,7 +59,7 @@ export default function FinalCTA() {
         <AnimateOnScroll delay={0.3}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://docs.demere.io"
+              href="https://docs.paypax.xyz"
               className="btn-primary text-base px-8"
               target="_blank"
               rel="noopener noreferrer"
@@ -69,7 +69,7 @@ export default function FinalCTA() {
             </a>
             <a href="#wallet" className="btn-secondary text-base px-8">
               <Download size={18} aria-hidden="true" />
-              Download DeMere Wallet
+              Download PayPax Wallet
             </a>
           </div>
         </AnimateOnScroll>
