@@ -18,24 +18,28 @@ const SLIDES = [
     line: "Tap to pay. Done before you pocket your phone.",
     bg: "linear-gradient(160deg, #0D1A14 0%, #060E09 100%)",
     accent: "rgba(var(--gold-rgb), 0.14)",
+    photo: "/images/personal/reel-1.webp",
   },
   {
-    id: 2, tag: "Corner shop", stat: "$0", statLabel: "gas, ever",
-    line: "Scan the QR. No gas prompt. No second coin to buy.",
+    id: 2, tag: "In-game purchase", stat: "$0", statLabel: "gas, ever",
+    line: "Buy the skin. No gas, no extra steps, no broken checkout.",
     bg: "linear-gradient(160deg, #0A1020 0%, #060810 100%)",
     accent: "rgba(var(--gold-rgb), 0.10)",
+    photo: "/images/personal/reel-2.webp",
   },
   {
-    id: 3, tag: "Split with friends", stat: "1 tap", statLabel: "to send",
-    line: "Send your share of dinner in USDC, right from the table.",
+    id: 3, tag: "Online checkout", stat: "1 tap", statLabel: "to send",
+    line: "Pay at checkout anywhere on the web. No card details needed.",
     bg: "linear-gradient(160deg, #130B1A 0%, #0A0710 100%)",
     accent: "rgba(var(--gold-rgb), 0.12)",
+    photo: "/images/personal/reel-3.webp",
   },
   {
     id: 4, tag: "End of week", stat: "+18", statLabel: "WPGP earned",
     line: "Every payment quietly pays you back.",
     bg: "linear-gradient(160deg, #1A1200 0%, #0F0A00 100%)",
     accent: "rgba(var(--gold-rgb), 0.18)",
+    photo: "/images/personal/reel-4.webp",
   },
 ];
 
@@ -195,7 +199,17 @@ export default function HeroAndReel() {
           {SLIDES.map((s) => (
             <div key={s.id} className="relative rounded-2xl overflow-hidden min-h-[260px] flex items-end p-8"
               style={{ background: s.bg, border: "1px solid var(--border)" }}>
+              {s.photo && (
+                <img
+                  src={s.photo}
+                  alt={s.tag}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              )}
               <div className="absolute inset-0 rounded-2xl" style={{ background: s.accent }} aria-hidden="true" />
+              <div className="absolute inset-0"
+                style={{ background: "linear-gradient(to top, rgba(6,6,18,0.80) 0%, transparent 60%)" }}
+                aria-hidden="true" />
               <div className="relative z-10">
                 <p className="text-gold-warm text-xs font-semibold uppercase tracking-widest mb-3">{s.tag}</p>
                 <p className="font-black font-mono text-snow mb-1" style={{ fontSize: "clamp(36px,4vw,56px)" }}>
@@ -266,6 +280,14 @@ export default function HeroAndReel() {
             {SLIDES.map((slide) => (
               <div key={slide.id} className="relative flex-shrink-0"
                 style={{ width: `${CARD_W}px`, height: `${CARD_H}px`, background: slide.bg }}>
+                {/* Real photo — replaces gradient when available */}
+                {slide.photo && (
+                  <img
+                    src={slide.photo}
+                    alt={slide.tag}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                )}
                 <div className="absolute inset-0" style={{ background: slide.accent }} aria-hidden="true" />
                 {/* Bottom scrim — keeps slide text readable once photos replace bg */}
                 <div className="absolute inset-0"

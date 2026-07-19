@@ -91,28 +91,13 @@ export default function StatementBreak() {
         style={{
           /* Oversized so Ken Burns + parallax never expose edges */
           inset:    "-10%",
-          /*
-           * PLACEHOLDER — replace with:
-           *   backgroundImage: "url('/images/personal/statement.webp')",
-           *   backgroundSize: "cover",
-           *   backgroundPosition: "center",
-           */
-          background: "linear-gradient(160deg, #1A1000 0%, #0D0A00 40%, #060408 100%)",
+          backgroundImage: "url('/images/personal/statement.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           transformOrigin: "center center",
         }}
         aria-hidden="true"
-      >
-        {/* Warm gold ambient pool — centre of frame */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[60%] rounded-full blur-[120px]"
-          style={{ background: "rgba(var(--gold-rgb), 0.22)" }}
-        />
-        {/* Deep warm edges */}
-        <div
-          className="absolute inset-0"
-          style={{ background: "radial-gradient(ellipse at 20% 80%, rgba(180,80,10,0.18), transparent 55%)" }}
-        />
-      </div>
+      />
 
       {/* ── Gold hairline top ── */}
       <div

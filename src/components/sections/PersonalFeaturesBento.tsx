@@ -1,6 +1,6 @@
 "use client";
 
-import { Fuel, Key, Globe, Zap, Coins, Unlock } from "lucide-react";
+import { Fuel, Globe, Zap, Coins, Unlock } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
 /*
@@ -80,20 +80,18 @@ export default function PersonalFeaturesBento() {
               onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(var(--gold-rgb),0.32)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(var(--gold-rgb),0.14)"; }}
             >
-              <div className="flex-1 flex items-center justify-center py-4">
-                <div className="relative">
-                  <div className="absolute inset-0 rounded-full bg-gold-warm/15 blur-[30px] scale-150" aria-hidden="true" />
-                  <div className="relative w-20 h-20 rounded-2xl flex items-center justify-center"
-                    style={{ background: "rgba(var(--gold-rgb),0.12)", border: "1px solid rgba(var(--gold-rgb),0.25)" }}>
-                    <Key size={36} className="text-gold-warm" aria-hidden="true" />
-                  </div>
-                </div>
-              </div>
+              {/* Background photo */}
+              <img
+                src="/images/personal/bento-custody.webp"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500"
+              />
 
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest block mb-2" style={{ color: "var(--gold)" }}>Self-custody</span>
-                <h3 className="text-2xl font-black text-snow leading-tight mb-2">Your keys.<br />Your money.</h3>
-                <p className="text-xs leading-relaxed" style={{ color: "var(--bento-text-small)" }}>No one can freeze, pause, or touch your balance.</p>
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 gap-3 z-10">
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "var(--gold)" }}>Self-custody</span>
+                <h3 className="text-3xl font-black text-snow leading-tight">Your keys.<br />Your money.</h3>
+                <p className="text-sm leading-relaxed max-w-[200px]" style={{ color: "var(--bento-text-small)" }}>No one can freeze, pause, or touch your balance.</p>
               </div>
             </div>
           </AnimateOnScroll>
@@ -109,17 +107,24 @@ export default function PersonalFeaturesBento() {
               onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(99,130,220,0.35)"; }}
               onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "var(--bento-chain-border)"; }}
             >
+              {/* Background photo */}
+              <img
+                src="/images/personal/bento-chain.webp"
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:opacity-35 transition-opacity duration-500"
+              />
               <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-35 transition-opacity duration-500" aria-hidden="true">
                 <Globe size={90} strokeWidth={0.8} style={{ color: "#6382DC" }} />
               </div>
               <div className="absolute top-0 right-0 w-40 h-40 rounded-full blur-[60px] pointer-events-none"
                 style={{ background: "rgba(99,130,220,0.10)" }} aria-hidden="true" />
 
-              <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "#4F6DC8" }}>Multi-chain</span>
-              <div>
-                <h3 className="text-2xl md:text-3xl font-black text-snow leading-tight mb-2">One wallet,<br />every chain.</h3>
-                <p className="text-xs leading-relaxed" style={{ color: "var(--bento-text-body)" }}>
-                  BNB Chain, Base, Polygon. Same wallet, same experience. You never think about which chain you&apos;re on.
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 gap-3 z-10">
+                <span className="text-[11px] font-bold uppercase tracking-widest" style={{ color: "#4F6DC8" }}>Multi-chain</span>
+                <h3 className="text-3xl font-black text-snow leading-tight">One wallet,<br />every chain.</h3>
+                <p className="text-sm leading-relaxed max-w-[200px]" style={{ color: "var(--bento-text-body)" }}>
+                  BNB Chain, Base, Polygon. Same wallet, same experience.
                 </p>
               </div>
             </div>

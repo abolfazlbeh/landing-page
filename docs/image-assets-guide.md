@@ -413,63 +413,74 @@ morning light`
 
 ---
 
-### Frame 12 — `reel-2.webp` · 16:9 · ≥ 1600 × 900 px · "Corner shop"
+### Frame 12 — `reel-2.webp` · 16:9 · ≥ 1600 × 900 px · "In-game purchase"
 
-**Scene:** Inside a small corner convenience store or newsagent-style shop.
-A customer's hand points a phone at a printed QR code sticker on the counter
-or a small QR stand. The phone camera is clearly aimed at the QR — but the QR
-is blurred / unreadable. Behind: a typical corner-shop background — shelves
-with snacks or drinks, a tired fluorescent shoplight, a slightly cluttered but
-warm and human setting. The shot is candid, slightly wide — you can see both
-the hand with the phone and the surrounding shop context.
+**Scene:** A young person sitting cross-legged on a bed or a bright window-side
+desk, laptop open in front of them showing a game store or item shop page —
+colorful, abstract, nothing readable. They are holding their phone in one hand
+with a relaxed grip, glancing at it with a slight smile — the purchase just
+went through. The room is bright and airy: daylight from a large window,
+white or light-colored walls, maybe a plant on the windowsill. The overall
+feel is light, casual, everyday — not dark or moody. This is someone buying
+something small and fun online without any friction.
 
-**Best search terms:** `phone scanning QR code small shop payment` / `QR code
-payment convenience store hand` / `scan QR corner shop checkout`
+**Important distinction:** the scene is bright and open, **not a dark gaming
+den**. Natural daylight, airy room, relaxed posture. The laptop shows a
+colorful abstract game or app store UI — nothing readable.
+
+**Best search terms:** `young person laptop bright room phone smile online
+shopping` / `person bed laptop phone daylight window cozy` /
+`online purchase laptop phone notification bright natural light`
 
 **Generation prompt**
-> A customer's hand holding a smartphone with the camera pointed at a small QR
-> code sticker on a corner shop counter. The QR code is a blurred abstract
-> square — unreadable. Background is a typical small convenience store interior:
-> shelves of snacks, a cluttered but cozy feel, warm fluorescent and daylight
-> mix. The shot is slightly wide — you can see the store context around the
-> hand. Candid, real, no poses. 16:9 landscape, high resolution.
-> Negative: readable QR code, readable text, brand names, HDR.
+> A young person in their mid-twenties sitting cross-legged on a bed or at a
+> bright desk near a large window, laptop open in front of them showing a
+> colorful abstract store or game UI (unreadable). They hold a smartphone in
+> one hand, glancing at it with a casual relaxed smile — a purchase just
+> completed. The room is bright and airy: white walls, natural daylight
+> streaming in, a plant nearby. Light and warm atmosphere, not dark. Shallow
+> depth of field. Candid documentary style. Full-bleed 16:9, high resolution.
+> No readable text on any screen, no brand logos, no card numbers.
+> Negative: dark room, RGB lights, gaming chair, readable text, logos,
+> HDR, posed, stock cheesiness.
 
 **Modification prompt**
-> Crop to 16:9. Blur the QR code into an abstract dark square — it must not be
-> scannable. Grade warm with slightly lifted shadows to keep the shop interior
-> readable but cozy. Blur any readable store signage. Darken the lower third.
+> Crop to full-bleed 16:9. Brighten and warm the scene toward a natural
+> daylight feel — lift shadows, open up the exposure. Blur all screen content
+> to soft abstract color glows. Darken only the lower third slightly for text
+> overlay legibility. Keep the person and laptop sharp.
 
 ---
 
-### Frame 13 — `reel-3.webp` · 16:9 · ≥ 1600 × 900 px · "Split with friends"
+### Frame 13 — `reel-3.webp` · 16:9 · ≥ 1600 × 900 px · "Online checkout"
 
-**Scene:** Around a restaurant table, after a meal. 3–4 people in their 20s–30s,
-relaxed, laughing. One person holds their phone up with both hands — their
-phone screen faces them (not the camera) and shows an abstract soft glow.
-The table has finished plates, glasses of wine or cocktails, napkins. Warm
-amber restaurant lighting. One person is pointing at the phone or laughing
-about it. The mood is celebratory and easy — this is the moment the bill is
-being split, and it's effortless.
+**Scene:** A person sitting at a desk or on a sofa with a laptop open in
+front of them. On the laptop screen: an abstract e-commerce or subscription
+checkout page — soft glow, no readable brand names. Their phone rests on
+the desk or is held up showing a confirmation notification. The mood is
+everyday and relaxed — this could be buying anything online: a game, a
+subscription, clothes, software. No shop counter, no street. Natural daylight
+or warm indoor light.
 
-**Best search terms:** `friends restaurant table phone splitting bill` /
-`group dinner table phone payment young adults` / `restaurant friends
-laughing phone check payment`
+**Best search terms:** `person laptop online shopping payment phone desk` /
+`online checkout laptop confirmation phone notification` /
+`person buying online laptop home cozy`
 
 **Generation prompt**
-> Candid shot of 3–4 friends in their late twenties sitting around a restaurant
-> table after a meal. One person holds a smartphone up in both hands, screen
-> facing away from the camera. Another person leans in laughing. The table has
-> finished plates, wine glasses, and crumpled napkins. Warm amber restaurant
-> lighting, intimate atmosphere. The mood is easy and fun — splitting the bill
-> is effortless. Full-bleed 16:9. No readable screen text. Documentary style.
-> Negative: posed, stiff, readable text, logos, HDR, stock cheesiness.
+> A person sitting casually at a desk or on a sofa with a laptop open showing
+> an abstract glowing checkout or payment screen (unreadable). Their
+> smartphone beside them shows a soft notification glow. The room is casual
+> and warm — natural daylight or cozy lamp light. Could be any online
+> purchase: a game, a subscription, a product. 16:9 landscape, high
+> resolution. No readable text on any screen, no brand logos, no card numbers.
+> Candid documentary style, shallow depth of field.
+> Negative: physical store, cash, card machine, readable text, logos, HDR.
 
 **Modification prompt**
-> Crop to full-bleed 16:9. Warm the ambient light to amber-gold. Blur the phone
-> screen to a soft glow. Keep 2–3 faces partially in frame and expressive.
-> Darken the lower third. Boost the candid feel — reduce any overly sharp or
-> studio-looking edges.
+> Crop to full-bleed 16:9. Warm the grade to a cozy indoor feel. Blur all
+> screen content to abstract glows — no readable text on laptop or phone.
+> Darken the lower third. Keep person and laptop sharp, let background fall
+> into soft bokeh.
 
 ---
 
@@ -513,27 +524,115 @@ phone afternoon light`
   `backgroundImage: "url('/images/personal/statement.webp')"`,
   `backgroundSize:"cover"`, `backgroundPosition:"center"`; remove the two
   gradient/accent overlay divs. Keep the scrim + hairline.
-- **Description:** The page's "poster frame" — the one screenshot people share.
-  A warm, cinematic, aspirational real-life moment tied to freedom of movement:
-  paying at a night market abroad, handing coffee across a counter, or splitting
-  a bill with friends. Bottom third must stay dark enough for a bold statement.
+- **Description:** A pure atmosphere shot — **no people, no phones, no payment
+  context**. The bold statement text carries the message; the image only needs
+  to feel right. Think: something textural, expansive, and warm that gives the
+  eye somewhere beautiful to rest. It can be completely unrelated to payments —
+  abstract light, a landscape, a macro texture, an architectural detail. The
+  only requirement is that it has enough dark area in the lower or center region
+  for white text to sit over it legibly.
 
-**Generation prompt**
-> Cinematic wide shot of a person paying with a phone at a vibrant night market
-> abroad, string lights and warm bokeh, golden-amber glow, candid mid-moment,
-> aspirational travel feeling, shallow depth of field, high resolution
-> landscape, darker toward the bottom for text overlay, no readable text or
-> logos.
+**Mood options — pick whichever resonates:**
+
+| Option | What it looks like | Search terms |
+|--------|-------------------|--------------|
+| A — Golden light abstract | Warm bokeh or light leak, soft gold orbs on dark background, like late-afternoon sun through glass | `gold bokeh abstract warm light dark background` |
+| B — Macro texture | Extreme close-up of sand, fabric weave, hammered metal, or paper — warm-toned, shallow depth of field | `macro texture warm gold abstract close-up` |
+| C — Minimal landscape | Wide open landscape at golden hour — empty desert, open field, calm sea horizon — no people | `golden hour landscape empty no people minimal` |
+| D — Architecture / light | Geometric shadows and light on a warm stone or concrete surface, abstract angles | `architectural abstract light shadow warm texture` |
+| E — Smoke / ink / fluid | Dark background with gold or amber smoke, ink in water, or fluid pour — cinematic | `gold smoke dark background abstract cinematic` |
+
+**Generation prompt (Option E — recommended for strongest brand impact)**
+> Abstract cinematic image: dark near-black background with slow curling gold
+> and amber smoke or ink dispersing through the air. Rich warm tones — deep
+> ochre, burnt amber, soft gold. No people, no objects, no text, no logos.
+> Ultra high resolution wide landscape. The image should feel premium,
+> mysterious, and warm. Suitable as a full-bleed poster background with white
+> text overlaid.
+> Negative: people, hands, phones, faces, text, watermark, logo, neon, blue,
+> cold tones, HDR halos.
+
+**Generation prompt (Option A — softer, more accessible)**
+> Shallow depth of field photograph of warm golden bokeh light — soft glowing
+> circles of amber and gold light on a very dark background. Like late-afternoon
+> sun through a window with dust particles. Abstract, no identifiable objects,
+> no people. Wide landscape crop, ultra high resolution.
+> Negative: people, text, logos, cold tones, neon, HDR.
 
 **Modification prompt**
-> Crop to a wide cinematic landscape (≥2000px). Grade warm gold/amber with rich
-> contrast, add a subtle darkening gradient across the bottom third for text
-> legibility, and keep a warm glow pool near the center. Remove or blur any
-> readable signage.
+> Crop to a wide cinematic landscape (≥ 2000px). Grade toward deep warm tones —
+> rich amber, dark gold, near-black shadows. Ensure a region of relative
+> darkness (center or lower half) where bold white text will be placed. Remove
+> or blur any recognizable objects, faces, or text. Boost contrast and depth.
 
 ---
 
-## Note: TapToPay (Act 3) needs no photo
+## 16–17. PersonalFeaturesBento — CUSTODY & CHAIN card backgrounds
+
+- **Component:** `src/components/sections/PersonalFeaturesBento.tsx`
+- **Cards:** card 2 (CUSTODY) and card 3 (CHAIN)
+- **Note:** These are small bento cards, not full-bleed. The image sits behind
+  a dark scrim and the card content sits on top. **No people needed** — pure
+  abstract or textural backgrounds that reinforce the card's concept.
+
+---
+
+### Slot 16 — `bento-custody.webp` · 1:1 · 600 × 600 px · CUSTODY card
+
+- **Suggested path:** `public/images/personal/bento-custody.webp`
+- **Concept:** Self-custody — your keys, your money, no one can touch it.
+- **Description:** A pure abstract or macro image that feels **secure,
+  private, and solid**. Think: close-up of a heavy lock mechanism, brushed
+  metal texture, a vault-like surface, or abstract dark geometry with a warm
+  gold light source catching an edge. No people, no phones, no text. Dark
+  background with gold or warm tones so the card's gold icon and white text
+  stay readable on top.
+
+**Best search terms:** `macro metal lock texture dark gold light` /
+`abstract dark geometry gold edge light` / `vault metal texture close-up
+warm light`
+
+**Generation prompt**
+> Macro close-up of a heavy brushed metal lock or vault mechanism, dark
+> near-black background, a single warm gold light catching the metal edges.
+> Abstract, no people, no text, no logos. Square 1:1. The mood is premium,
+> secure, private — like a bank vault but warmer. Deep shadows, sharp
+> metallic detail, gold rim light.
+> Negative: people, hands, text, logos, neon, bright colors, HDR.
+
+**Modification prompt**
+> Crop to 1:1 square. Push the grade toward deep dark tones with warm gold
+> highlights on edges. Increase contrast and shadow depth. Remove any
+> recognizable branding or text. The result should feel dark, secure, and
+> premium.
+
+---
+
+### Slot 17 — `bento-chain.webp` · 1:1 · 600 × 600 px · CHAIN card
+
+- **Suggested path:** `public/images/personal/bento-chain.webp`
+- **Concept:** Multi-chain — one wallet, every chain, seamlessly connected.
+- **Description:** A pure abstract image that feels **networked, global, and
+  fluid**. Think: aerial view of city lights at night, abstract fiber-optic
+  light trails on dark background, a deep-space star field, or flowing blue
+  light streams suggesting connected nodes. No people, no text. Dark
+  background with blue or indigo tones matching the card's `#6382DC` accent.
+
+**Best search terms:** `abstract blue light trails dark background network` /
+`fiber optic light streams dark blue` / `city lights aerial night abstract`
+
+**Generation prompt**
+> Abstract image of flowing blue and indigo light streams or fiber-optic
+> trails on a near-black background. The lights suggest connected nodes or
+> a global network. No people, no text, no logos, no identifiable objects.
+> Square 1:1. The mood is expansive, technological, seamless. Deep dark
+> background, cool blue and soft indigo tones.
+> Negative: people, text, logos, warm tones, HDR, oversaturated, neon green.
+
+**Modification prompt**
+> Crop to 1:1 square. Push all tones toward cool dark blue and deep indigo.
+> Darken the overall image so card text remains legible on top. Remove any
+> identifiable objects or text. Add a subtle vignette to edges.
 
 `src/components/sections/TapToPay.tsx` renders its phone, QR code, arc, particles
 and receipt entirely in **code (SVG + DOM)**. No image asset is required — it is
@@ -553,6 +652,8 @@ fully theme-aware and resolution-independent.
 | 6–10 | Impact carousel ×5 | `business/impact-{1..5}.webp` | 16:9 / 1:1 | ☐ |
 | 11–14 | Personal reel ×4 | `personal/reel-{1..4}.webp` | 16:9 | ☐ |
 | 15 | Statement break | `personal/statement.webp` | wide | ☐ |
+| 16 | Bento — CUSTODY card | `personal/bento-custody.webp` | 1:1 | ☐ |
+| 17 | Bento — CHAIN card | `personal/bento-chain.webp` | 1:1 | ☐ |
 
 ---
 
